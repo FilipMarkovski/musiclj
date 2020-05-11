@@ -1,5 +1,6 @@
 (ns hipstr.handler
   (:require [compojure.core :refer [defroutes]]
+            [hipstr.routes.albums :refer [album-routes]]
             [hipstr.routes.home :refer [home-routes]]
             [hipstr.routes.test_routes :refer [test-routes]]
             [hipstr.middleware :refer [load-middleware]]
@@ -12,7 +13,34 @@
             [taoensso.timbre.appenders.rolling :as rolling]
             [selmer.parser :as parser]
             [environ.core :refer [env]]
-            [cronj.core :as cronj]))
+            [cronj.core :as cronj]
+            [migratus.core :refer :all]
+            )
+  )
+
+(def migratus-config
+  {
+     :store :database
+     :migration-dir "migrations"
+     :migration-table-name "_migrations"
+     :db {
+          :classname "org.postgresql.Driver"
+          :subprotocol "postgresql"
+          :subname "//localhost/postgres"
+          :user "hipstr"
+          :password "p455w0rd"
+          }
+     }
+  )
+
+(defn migrate-db []
+  (timbre/info "checking migrations")
+  (try
+    (migratus.core/migrate migratus-config)
+    (catch Exception e
+      (timbre/error "Failed to migrate" e)))
+
+  (timbre/info "finished migrations"))
 
 (defroutes base-routes
   (route/resources "/")
@@ -32,6 +60,7 @@
     [:shared-appender-config :rolling :path] "logs/hipstr.log")
 
   (if (env :dev) (parser/cache-off!))
+  (migrate-db)
   ;;start the expired session cleanup job
   (cronj/start! session-manager/cleanup-job)
   (timbre/info "\n-=[ hipstr started successfully"
@@ -59,7 +88,7 @@
 
 (def app (app-handler
            ;; add your application routes here
-           [home-routes test-routes base-routes]
+           [home-routes album-routes test-routes base-routes]
            ;; add custom middleware here
            :middleware (load-middleware)
            :ring-defaults (mk-defaults false)
