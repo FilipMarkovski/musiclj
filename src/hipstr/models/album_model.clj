@@ -22,5 +22,5 @@
              artist (or (first (get-artists-by-name artist-info txn))
                         (insert-artist<! artist-info txn))
              album-info (assoc album :artist_id (:artist_id artist))]
-         (or (first (get-album-by-name album-info txn))
+         (or (first (get-albums-by-name album-info txn))
              (insert-album<! album-info txn)))))

@@ -4,6 +4,7 @@
             [hipstr.models.album_model :as album]
             [hipstr.validators.album_validator :as v]
             [taoensso.timbre :as timbre]
+            [noir.util.route :refer [restricted]]
             ))
 
 
@@ -45,7 +46,7 @@
     (render-recently-added-html ctx)))
 
 (defroutes album-routes
-  (GET "/albums/recently-added" [] (recently-added-page))
+  (GET "/albums/recently-added" [] (restricted (recently-added-page)))
   (GET "/albums/:artist_name" [artist_name] (artist-page artist_name))
-  (POST "/albums/recently-added" [& album-form] (recently-added-submit album-form))
+  (POST "/albums/recently-added" [& album-form] (restricted (recently-added-submit album-form)))
 )
