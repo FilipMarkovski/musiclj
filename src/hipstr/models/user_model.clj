@@ -1,12 +1,41 @@
 (ns hipstr.models.user_model
-  (:require [yesql.core :refer [defqueries]]
+  (:require ;[yesql.core :refer [defqueries]]
             [crypto.password.bcrypt :as password]
             [hipstr.models.connection :refer [db-spec]]
             [noir.session :as session]
+            [korma.core :as k]
             ))
 
-(defqueries "hipstr/models/users.sql"
-            { :connection db-spec })
+;(defqueries "hipstr/models/users.sql" { :connection db-spec })
+
+
+; declare our users table, which in our hipstr application
+; is pretty straight forward.
+; For Korma, however, we have to define the primary key because
+; the name of the primary key is neither 'id' or 'users_id'
+; ([tablename]_id)
+(k/defentity users
+   (k/pk :user_id))
+
+
+; -- name: get-user-by-username
+; -- Fetches a user from the DB based on username. ; SELECT *
+; FROM users
+; WHERE username=:username
+(defn get-user-by-username
+  "Fetches a user from the DB based on username."
+  [username]
+  (k/select users (k/where username)))
+
+; -- name: insert-user<!
+; -- Inserts a new user into the Users table
+; -- Expects :username, :email, and :password
+; INSERT INTO users (username, email, pass)
+; VALUES (:username, :email, :password)
+(defn insert-user<!
+  "Inserts a new user into the Users table. Expects :username, :email, and :password"
+  [user]
+  (k/insert users (k/values user)))
 
 (defn add-user!
   "Saves a user to the database."

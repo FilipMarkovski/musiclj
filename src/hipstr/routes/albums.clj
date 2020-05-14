@@ -23,7 +23,7 @@
   [artist_name]
   (layout/render "albums/artist.html"
     {:artist artist_name
-     :albums (album/get-artist-albums {:artist_name artist_name})}))
+     :albums (album/get-artist-albums {:artist artist_name})}))
 
 (defn recently-added-submit
   "Handles the add-album form on the recently-added page.

@@ -16,8 +16,9 @@
                  [com.novemberain/validateur "2.3.1"]
                  [org.postgresql/postgresql "42.2.6"]
                  [migratus "0.7.0"]
-                 [yesql "0.5.0-beta2"]
+                 [yesql "0.5.0-rc1"]
                  [crypto-password "0.1.3"]
+                 [korma "0.4.0"]
                  ]
 
   :repl-options {:init-ns hipstr.repl}
@@ -25,8 +26,8 @@
   :plugins [[lein-ring "0.8.13"]
             [lein-environ "1.0.0"]
             [lein-ancient "0.5.5"]
-            [quickie "0.3.6"]
             [migratus-lein "0.1.0"]
+            [quickie "0.3.6"]
             ]
   :ring {:handler hipstr.handler/app
          :init    hipstr.handler/init
@@ -44,7 +45,7 @@
                   }
    }
   :profiles
-  {:uberjar {:omit-source true
+  {:uberjar {:omit-source false
              :env {:production true}
              :aot :all}
    :production {:ring {:open-browser? false
