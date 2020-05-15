@@ -1,4 +1,4 @@
-(ns hipstr.models.connection
+(ns musiclj.models.connection
   (:require [environ.core :refer [env]]
             [korma.db :as db]))
 

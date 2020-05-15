@@ -1,4 +1,4 @@
-(ns hipstr.validators.user_validator
+(ns musiclj.validators.user_validator
   (:require [validateur.validation :refer :all]
             [noir.validation :as v]
             ))

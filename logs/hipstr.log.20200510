@@ -1,26 +1,26 @@
-2020-May-10 13:07:02 +0200 UnknownHost INFO [hipstr.handler] - hipstr is shutting down...
-2020-May-10 13:07:07 +0200 UnknownHost INFO [hipstr.handler] - shutdown complete!
-2020-May-10 13:07:19 +0200 UnknownHost INFO [hipstr.handler] - checking migrations
-2020-May-10 13:07:25 +0200 UnknownHost INFO [hipstr.handler] - finished migrations
-2020-May-10 13:07:25 +0200 UnknownHost INFO [hipstr.handler] - 
--=[ hipstr started successfully using the development profile ]=-
-2020-May-10 13:11:46 +0200 UnknownHost INFO [hipstr.handler] - hipstr is shutting down...
-2020-May-10 13:11:51 +0200 UnknownHost INFO [hipstr.handler] - shutdown complete!
-2020-May-10 13:12:04 +0200 UnknownHost INFO [hipstr.handler] - checking migrations
-2020-May-10 13:12:09 +0200 UnknownHost INFO [hipstr.handler] - finished migrations
-2020-May-10 13:12:09 +0200 UnknownHost INFO [hipstr.handler] - 
--=[ hipstr started successfully using the development profile ]=-
-2020-May-10 13:13:43 +0200 UnknownHost INFO [hipstr.handler] - hipstr is shutting down...
-2020-May-10 13:13:48 +0200 UnknownHost INFO [hipstr.handler] - shutdown complete!
-2020-May-10 13:13:55 +0200 UnknownHost INFO [hipstr.handler] - checking migrations
-2020-May-10 13:14:01 +0200 UnknownHost INFO [hipstr.handler] - finished migrations
-2020-May-10 13:14:01 +0200 UnknownHost INFO [hipstr.handler] - 
--=[ hipstr started successfully using the development profile ]=-
-2020-May-10 13:15:01 +0200 UnknownHost INFO [hipstr.handler] - hipstr is shutting down...
-2020-May-10 13:15:06 +0200 UnknownHost INFO [hipstr.handler] - shutdown complete!
-2020-May-10 13:15:12 +0200 UnknownHost INFO [hipstr.handler] - checking migrations
-2020-May-10 13:15:18 +0200 UnknownHost INFO [hipstr.handler] - finished migrations
-2020-May-10 13:15:18 +0200 UnknownHost INFO [hipstr.handler] - 
--=[ hipstr started successfully using the development profile ]=-
-2020-May-10 13:17:54 +0200 UnknownHost INFO [hipstr.handler] - hipstr is shutting down...
-2020-May-10 13:17:59 +0200 UnknownHost INFO [hipstr.handler] - shutdown complete!
+2020-May-10 13:07:02 +0200 UnknownHost INFO [musiclj.handler] - musiclj is shutting down...
+2020-May-10 13:07:07 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-10 13:07:19 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-10 13:07:25 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-10 13:07:25 +0200 UnknownHost INFO [musiclj.handler] -
+-=[ musiclj started successfully using the development profile ]=-
+2020-May-10 13:11:46 +0200 UnknownHost INFO [musiclj.handler] - musiclj is shutting down...
+2020-May-10 13:11:51 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-10 13:12:04 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-10 13:12:09 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-10 13:12:09 +0200 UnknownHost INFO [musiclj.handler] -
+-=[ musiclj started successfully using the development profile ]=-
+2020-May-10 13:13:43 +0200 UnknownHost INFO [musiclj.handler] - musiclj is shutting down...
+2020-May-10 13:13:48 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-10 13:13:55 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-10 13:14:01 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-10 13:14:01 +0200 UnknownHost INFO [musiclj.handler] -
+-=[ musiclj started successfully using the development profile ]=-
+2020-May-10 13:15:01 +0200 UnknownHost INFO [musiclj.handler] - musiclj is shutting down...
+2020-May-10 13:15:06 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-10 13:15:12 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-10 13:15:18 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-10 13:15:18 +0200 UnknownHost INFO [musiclj.handler] -
+-=[ musiclj started successfully using the development profile ]=-
+2020-May-10 13:17:54 +0200 UnknownHost INFO [musiclj.handler] - musiclj is shutting down...
+2020-May-10 13:17:59 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!

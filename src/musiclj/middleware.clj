@@ -1,4 +1,4 @@
-(ns hipstr.middleware
+(ns musiclj.middleware
   (:require [taoensso.timbre :as timbre]
             [selmer.parser :as parser]
             [environ.core :refer [env]]

@@ -1,7 +1,7 @@
-(ns hipstr.models.album_model
+(ns musiclj.models.album_model
   (:require ;[yesql.core :refer [defqueries]]
             [clojure.java.jdbc :as jdbc]
-            [hipstr.models.connection :refer [db-spec]]
+            [musiclj.models.connection :refer [db-spec]]
             [korma.core :as k]
             [korma.db :as db]
             ))

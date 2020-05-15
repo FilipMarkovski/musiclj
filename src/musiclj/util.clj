@@ -1,4 +1,4 @@
-(ns hipstr.util
+(ns musiclj.util
   (:require [noir.io :as io]
             [markdown.core :as md]))
 

@@ -1,11 +1,11 @@
-(ns hipstr.routes.home
+(ns musiclj.routes.home
   (:require [compojure.core :refer :all]
-            [hipstr.layout :as layout]
-            [hipstr.util :as util]
+            [musiclj.layout :as layout]
+            [musiclj.util :as util]
             [ring.util.response :as response]
-            [hipstr.validators.user_validator :as v]
-            [hipstr.models.user_model :as u]
-            [hipstr.cookies :as cookies]
+            [musiclj.validators.user_validator :as v]
+            [musiclj.models.user_model :as u]
+            [musiclj.cookies :as cookies]
             ))
 
 (defn home-page []

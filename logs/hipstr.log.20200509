@@ -1,10 +1,10 @@
-2020-May-09 15:02:40 +0200 Markovskis-MBP.mshome.net INFO [hipstr.handler] - checking migrations
-2020-May-09 15:02:40 +0200 Markovskis-MBP.mshome.net INFO [hipstr.handler] - finished migrations
-2020-May-09 15:02:40 +0200 Markovskis-MBP.mshome.net INFO [hipstr.handler] - 
--=[ hipstr started successfully using the development profile ]=-
-2020-May-09 19:46:05 +0200 Markovskis-MBP INFO [hipstr.handler] - hipstr is shutting down...
-2020-May-09 19:46:05 +0200 Markovskis-MBP INFO [hipstr.handler] - shutdown complete!
-2020-May-09 19:51:25 +0200 Markovskis-MBP INFO [hipstr.handler] - checking migrations
-2020-May-09 19:51:25 +0200 Markovskis-MBP INFO [hipstr.handler] - finished migrations
-2020-May-09 19:51:25 +0200 Markovskis-MBP INFO [hipstr.handler] - 
--=[ hipstr started successfully using the development profile ]=-
+2020-May-09 15:02:40 +0200 Markovskis-MBP.mshome.net INFO [musiclj.handler] - checking migrations
+2020-May-09 15:02:40 +0200 Markovskis-MBP.mshome.net INFO [musiclj.handler] - finished migrations
+2020-May-09 15:02:40 +0200 Markovskis-MBP.mshome.net INFO [musiclj.handler] -
+-=[ musiclj started successfully using the development profile ]=-
+2020-May-09 19:46:05 +0200 Markovskis-MBP INFO [musiclj.handler] - musiclj is shutting down...
+2020-May-09 19:46:05 +0200 Markovskis-MBP INFO [musiclj.handler] - shutdown complete!
+2020-May-09 19:51:25 +0200 Markovskis-MBP INFO [musiclj.handler] - checking migrations
+2020-May-09 19:51:25 +0200 Markovskis-MBP INFO [musiclj.handler] - finished migrations
+2020-May-09 19:51:25 +0200 Markovskis-MBP INFO [musiclj.handler] -
+-=[ musiclj started successfully using the development profile ]=-

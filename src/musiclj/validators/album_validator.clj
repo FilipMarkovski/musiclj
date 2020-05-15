@@ -1,4 +1,4 @@
-(ns hipstr.validators.album_validator
+(ns musiclj.validators.album_validator
   (:require [validateur.validation :refer :all]
             [noir.validation :as v]
             [clj-time.core :as t]

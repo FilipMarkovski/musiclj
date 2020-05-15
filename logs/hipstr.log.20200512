@@ -1,4 +1,4 @@
-2020-May-12 13:53:38 +0200 UnknownHost INFO [hipstr.handler] - checking migrations
-2020-May-12 13:53:43 +0200 UnknownHost INFO [hipstr.handler] - finished migrations
-2020-May-12 13:53:43 +0200 UnknownHost INFO [hipstr.handler] - 
--=[ hipstr started successfully using the development profile ]=-
+2020-May-12 13:53:38 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-12 13:53:43 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-12 13:53:43 +0200 UnknownHost INFO [musiclj.handler] -
+-=[ musiclj started successfully using the development profile ]=-

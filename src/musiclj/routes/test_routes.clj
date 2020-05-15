@@ -1,4 +1,4 @@
-(ns hipstr.routes.test_routes
+(ns musiclj.routes.test_routes
   (:require [compojure.core :refer :all]))
 
 

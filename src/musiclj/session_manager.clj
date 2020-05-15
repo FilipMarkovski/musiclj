@@ -1,4 +1,4 @@
-(ns hipstr.session-manager
+(ns musiclj.session-manager
   (:require [noir.session :refer [clear-expired-sessions]]
             [cronj.core :refer [cronj]]))
 

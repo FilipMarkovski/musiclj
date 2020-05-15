@@ -1,7 +1,7 @@
-(ns hipstr.models.user_model
+(ns musiclj.models.user_model
   (:require ;[yesql.core :refer [defqueries]]
             [crypto.password.bcrypt :as password]
-            [hipstr.models.connection :refer [db-spec]]
+            [musiclj.models.connection :refer [db-spec]]
             [noir.session :as session]
             [korma.core :as k]
             ))

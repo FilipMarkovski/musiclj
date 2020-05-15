@@ -1,4 +1,4 @@
-(ns hipstr.cookies
+(ns musiclj.cookies
   (:require [noir.cookies :as c]))
 
 (defn remember-me

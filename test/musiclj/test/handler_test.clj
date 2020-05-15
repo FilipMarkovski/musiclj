@@ -1,7 +1,7 @@
-(ns hipstr.test.handler_test
+(ns musiclj.test.handler_test
   (:use clojure.test
         ring.mock.request
-        hipstr.handler))
+        musiclj.handler))
 
 (deftest test-app
   (testing "main route"

@@ -1,5 +1,5 @@
-(ns hipstr.test.validators.user_validator_test
-  (:require [hipstr.validators.user_validator :as uv])
+(ns musiclj.test.validators.user_validator_test
+  (:require [musiclj.validators.user_validator :as uv])
   (:use clojure.test))
 
 

@@ -1,5 +1,5 @@
-(ns hipstr.repl
-  (:use hipstr.handler
+(ns musiclj.repl
+  (:use musiclj.handler
         ring.server.standalone
         [ring.middleware file-info file]))
 

@@ -1,5 +1,5 @@
-(ns hipstr.routes.access
-  (:require [hipstr.models.user_model :refer [is-authed?]]))
+(ns musiclj.routes.access
+  (:require [musiclj.models.user_model :refer [is-authed?]]))
 
 (def rules
   "The rules for accessing various routes in our application."

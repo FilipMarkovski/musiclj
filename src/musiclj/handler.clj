@@ -1,12 +1,12 @@
-(ns hipstr.handler
+(ns musiclj.handler
   (:require [compojure.core :refer [defroutes]]
-            [hipstr.models.connection :refer [db-spec]]
-            [hipstr.routes.access :as access]
-            [hipstr.routes.albums :refer [album-routes]]
-            [hipstr.routes.home :refer [home-routes]]
-            [hipstr.routes.test_routes :refer [test-routes]]
-            [hipstr.middleware :refer [load-middleware]]
-            [hipstr.session-manager :as session-manager]
+            [musiclj.models.connection :refer [db-spec]]
+            [musiclj.routes.access :as access]
+            [musiclj.routes.albums :refer [album-routes]]
+            [musiclj.routes.home :refer [home-routes]]
+            [musiclj.routes.test_routes :refer [test-routes]]
+            [musiclj.middleware :refer [load-middleware]]
+            [musiclj.session-manager :as session-manager]
             [noir.response :refer [redirect]]
             [noir.util.middleware :refer [app-handler]]
             [ring.middleware.defaults :refer [site-defaults]]
@@ -53,7 +53,7 @@
     (rolling/make-rolling-appender {:min-level :info}))
 
   (timbre/set-config!
-    [:shared-appender-config :rolling :path] "logs/hipstr.log")
+    [:shared-appender-config :rolling :path] "logs/musiclj.log")
 
   (if (env :dev) (parser/cache-off!))
   (migrate-db)

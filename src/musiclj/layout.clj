@@ -1,10 +1,10 @@
-(ns hipstr.layout
+(ns musiclj.layout
   (:require [selmer.parser :as parser]
             [clojure.string :as s]
             [ring.util.response :refer [content-type response]]
             [compojure.response :refer [Renderable]]
             [environ.core :refer [env]]
-            [hipstr.models.user_model :as user]
+            [musiclj.models.user_model :as user]
             ))
 
 (def template-path "templates/")

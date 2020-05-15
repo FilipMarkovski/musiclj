@@ -21,7 +21,7 @@
                  [korma "0.4.0"]
                  ]
 
-  :repl-options {:init-ns hipstr.repl}
+  :repl-options {:init-ns musiclj.repl}
   :jvm-opts ["-server"]
   :plugins [[lein-ring "0.8.13"]
             [lein-environ "1.0.0"]
@@ -29,9 +29,9 @@
             [migratus-lein "0.1.0"]
             [quickie "0.3.6"]
             ]
-  :ring {:handler hipstr.handler/app
-         :init    hipstr.handler/init
-         :destroy hipstr.handler/destroy}
+  :ring {:handler musiclj.handler/app
+         :init    musiclj.handler/init
+         :destroy musiclj.handler/destroy}
   :migratus {
              :store :database
              :migration-dir "migrations"

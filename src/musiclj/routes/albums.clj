@@ -1,8 +1,8 @@
-(ns hipstr.routes.albums
+(ns musiclj.routes.albums
   (:require [compojure.core :refer :all]
-            [hipstr.layout :as layout]
-            [hipstr.models.album_model :as album]
-            [hipstr.validators.album_validator :as v]
+            [musiclj.layout :as layout]
+            [musiclj.models.album_model :as album]
+            [musiclj.validators.album_validator :as v]
             [taoensso.timbre :as timbre]
             [noir.util.route :refer [restricted]]
             ))
