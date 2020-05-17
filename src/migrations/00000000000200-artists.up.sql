@@ -20,3 +20,5 @@ INSERT INTO artists (name) VALUES ('Hungus')
 INSERT INTO artists (name) VALUES ('Smokey Fouler')
 --;;
 INSERT INTO artists (name) VALUES ('Brant')
+--;;
+INSERT INTO artists (name) VALUES ('Coldplay')

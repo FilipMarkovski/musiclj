@@ -5,7 +5,7 @@ CREATE TABLE albums
  release_date DATE         NOT NULL,
  created_at   TIMESTAMP    NOT NULL DEFAULT (now() AT TIME ZONE 'utc'),
  updated_at   TIMESTAMP    NOT NULL DEFAULT (now() AT TIME ZONE 'utc'),
- CONSTRAINT artist_album_name UNIQUE (artist_id, name));
+ CONSTRAINT artist_album_name UNIQUE (name));
 --;;
 -- create an update trigger which updates our update_date
 -- column by calling the above function
@@ -47,3 +47,13 @@ INSERT INTO albums (artist_id, name, release_date)
     SELECT a.artist_id, 'Petulant Suckup', '1995-05-21'
     FROM artists a
     WHERE a.name = 'Brant'
+--;;
+INSERT INTO albums (artist_id, name, release_date)
+    SELECT a.artist_id, 'Parachutes', '2008-06-12'
+    FROM artists a
+    WHERE a.name = 'Coldplay'
+--;;
+INSERT INTO albums (artist_id, name, release_date)
+    SELECT a.artist_id, 'Viva la Vida or Death and All His Friends', '2000-07-10'
+    FROM artists a
+    WHERE a.name = 'Coldplay'
