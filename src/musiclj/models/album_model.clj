@@ -9,7 +9,7 @@
 ;(defqueries "hipstr/models/albums.sql" { :connection db-spec })
 ;(defqueries "hipstr/models/artists.sql" { :connection db-spec })
 
-(declare artists albums)
+(declare artists albums songs genre genre_by_track genre_by_album)
 
 
 ; define our artists entity.
@@ -28,7 +28,54 @@
    (k/pk :album_id)
    ; We can define the foreign key relationship of the albums back
    ; to the artists table
-   (k/belongs-to artists {:fk :artist_id}))
+   (k/belongs-to artists {:fk :album_id})
+   ; define the relationship between albums and songs, and albums and genres
+   (k/has-many songs)
+   (k/has-many genre))
+
+
+; define the songs entity
+(k/defentity songs
+   ; again, we have to map the primary key to our korma definition.
+   (k/pk :song_id)
+   ; We can define the foreign key relationship of the songs back
+   ; to the albums table
+   (k/belongs-to albums {:fk :song_id})
+   ; define the relationship between songs and genres
+   (k/has-many genre))
+
+
+; define the songs entity
+(k/defentity genre
+   ; again, we have to map the primary key to our korma definition.
+   (k/pk :genre_id)
+   ; define the relationship between songs and genres, and albums and genres
+   (k/has-many songs)
+   (k/has-many albums))
+
+
+; define the genre_by_track entity
+(k/defentity genre_by_track
+   ; again, we have to map the primary key to our korma definition.
+   ; this time it's a composite primary key
+   (k/pk :genre_id)
+   (k/pk :song_id)
+   ; We can define the foreign key relationship of the
+   ; genre_by_track table with genres and songs
+   (k/belongs-to genre {:fk :genre_id})
+   (k/belongs-to songs {:fk :song_id}))
+
+
+; define the genre_by_album entity
+(k/defentity genre_by_album
+   ; again, we have to map the composite primary key
+   ; to our korma definition.
+   (k/pk :genre_id)
+   (k/pk :album_id)
+   ; We can define the foreign key relationship of the
+   ; genre_by_album table with genres and albums
+   (k/belongs-to genre {:fk :genre_id})
+   (k/belongs-to albums {:fk :album_id}))
 
 
 ; -- name: get-recently-added

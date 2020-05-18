@@ -1,0 +1,13 @@
+{% extends "templates/base.html" %}
+{% block content %}
+<h1>{{album}}</h1>
+<ol class="album-tracks">
+    {% for s in songs %}
+    <li>
+        <div class="song-name">{{s.name}}</div>
+        <div class="track-number">Track number: {{s.track_number}}</div>
+        <div class="youtube-link"><a href="{{s.youtube_link}}" target="_blank">Watch on Youtube</a></div>
+    </li>
+    {% endfor %}
+</ol>
+{% endblock %}
