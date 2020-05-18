@@ -28,7 +28,8 @@
    (k/pk :album_id)
    ; We can define the foreign key relationship of the albums back
    ; to the artists table
-   (k/belongs-to artists {:fk :album_id})
+   ; The :fk tells on which key the two tables are joined
+   (k/belongs-to artists {:fk :artist_id})
    ; define the relationship between albums and songs, and albums and genres
    (k/has-many songs)
    (k/has-many genre))
@@ -40,12 +41,12 @@
    (k/pk :song_id)
    ; We can define the foreign key relationship of the songs back
    ; to the albums table
-   (k/belongs-to albums {:fk :song_id})
+   (k/belongs-to albums {:fk :album_id})
    ; define the relationship between songs and genres
    (k/has-many genre))
 
 
-; define the songs entity
+; define the genre entity
 (k/defentity genre
    ; again, we have to map the primary key to our korma definition.
    (k/pk :genre_id)
@@ -81,10 +82,10 @@
 ; -- name: get-recently-added
 ; -- Gets the 10 most recently added albums in the db.
 ; SELECT art.name as artist, alb.album_id, alb.name as album_name,
-;        alb.release_date, alb.create_date
+;        alb.release_date, alb.created_at
 ; FROM artists art
 ; INNER JOIN albums alb ON art.artist_id = alb.artist_id
-; ORDER BY alb.create_date DESC
+; ORDER BY alb.created_at DESC
 ; LIMIT 10
 (defn get-recently-added
   "Gets the 10 most recently added albums in the db."
@@ -94,8 +95,8 @@
                   [:name :album_name] :release_date :created_at)
           (k/with artists (k/fields [:name :artist]))
           (k/order :created_at :DESC)
-          (k/limit 10)))
-
+          (k/limit 10))
+  )
 
 ; -- name: get-artist-albums
 ; -- Gets the discography for a given artist.
@@ -117,6 +118,39 @@
           (k/fields :albums.album_id [:albums.name :album_name] :albums.release_date)
           (k/where {:artists.name (:artist artist)})
           (k/order :release_date :DESC)))
+
+
+; SELECT s.name, s.track_number, g.genre_name, s.youtube_link
+; FROM songs s
+; INNER JOIN genre_by_track AS gt
+;       ON gt.song_id = s.song_id
+; INNER JOIN genre AS g
+;       ON g.genre_id = gt.genre_id
+; INNER JOIN albums AS alb
+;       ON alb.album_id = s.album_id;
+;
+; easier query
+;
+; SELECT s.name, s.track_number, s.youtube_link
+; FROM songs s
+; INNER JOIN albums AS alb
+;       ON alb.album_id = s.album_id
+; WHERE alb.name = :album_name;
+;
+(defn get-album-songs
+  "Gets the album track list."
+  ; for backwards compatibility it is expected that the
+  ; album param is a map, {:album [value]}
+  [album]
+  (k/select songs
+          (k/fields [:songs.name :song_name] :songs.track_number :songs.youtube_link)
+          ; for backwards compatibility we need to rename the :albums.name
+          ; field to :album_name
+          (k/with albums (k/fields [:albums.name :album_name]))
+          (k/where {:albums.name (:album album)})
+          (k/order :track_number :ASC))
+)
+
 
 
 ;-- name: insert-album<!

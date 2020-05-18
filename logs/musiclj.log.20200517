@@ -1,0 +1,6 @@
+2020-May-17 23:14:39 +0200 Markovskis-MBP.mshome.net INFO [musiclj.handler] - checking migrations
+2020-May-17 23:14:40 +0200 Markovskis-MBP.mshome.net INFO [musiclj.handler] - finished migrations
+2020-May-17 23:14:40 +0200 Markovskis-MBP.mshome.net INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-17 23:14:52 +0200 Markovskis-MBP.mshome.net INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-17 23:14:52 +0200 Markovskis-MBP.mshome.net INFO [musiclj.handler] - shutdown complete!

@@ -1,12 +1,19 @@
 {% extends "templates/base.html" %}
 {% block content %}
 <h1>{{artist}}</h1>
-<ol class="albums">
-    {% for a in albums %}
-    <li>
-<!--        <div class="artist"><a href="/albums/{{a.artist}}">{{a.artist}}</a></div>-->
-        <div class="album-name"><a href="/albums/{{a.album_name}}">{{a.album_name}}</a></div>
-        <div class="release-date">Released {{a.release_date}}</div> </li>
-    {% endfor %}
-</ol>
+
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+
+        <ol class="albums">
+            {% for a in albums %}
+            <li>
+                <div class="album-name"><a href="/album/{{a.album_name}}">{{a.album_name}}</a></div>
+                <div class="release-date">Released {{a.release_date}}</div>
+            </li>
+            {% endfor %}
+        </ol>
+
+    </div>
+</div>
 {% endblock %}

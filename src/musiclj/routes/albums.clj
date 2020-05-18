@@ -25,6 +25,14 @@
     {:artist artist_name
      :albums (album/get-artist-albums {:artist artist_name})}))
 
+(defn album-page
+  "Renders out the album track list page."
+  [album_name]
+  (layout/render "songs/album_tracks.html"
+                 {:album album_name
+                  :songs (album/get-album-songs {:album album_name})})
+)
+
 (defn recently-added-submit
   "Handles the add-album form on the recently-added page.
    In the case of validation errors or other unexpected errors,
@@ -46,7 +54,8 @@
     (render-recently-added-html ctx)))
 
 (defroutes album-routes
-  (GET "/albums/recently-added" [] (restricted (recently-added-page)))
-  (GET "/albums/:artist_name" [artist_name] (artist-page artist_name))
-  (POST "/albums/recently-added" [& album-form] (restricted (recently-added-submit album-form)))
+  (GET "/albums/recently-added"   []              (restricted (recently-added-page)))
+  (GET "/albums/:artist_name"     [artist_name]   (artist-page artist_name))
+  (GET "/album/:album_name"       [album_name]    (album-page album_name))
+  (POST "/albums/recently-added"  [& album-form]  (restricted (recently-added-submit album-form)))
 )

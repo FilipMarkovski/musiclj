@@ -9,12 +9,13 @@
             <li>
                 <div class="artist"><a href="/albums/{{a.artist}}">{{a.artist}}</a></div>
                 <div class="album-name">{{a.album_name}}</div>
-                <div class="release-date">{{a.release_date}}</div> </li>
+                <div class="release-date">{{a.release_date}}</div>
+            </li>
             {% endfor %}
         </ol>
     </div>
 
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 offset-md-2 col-md-4">
         {% with form=form %}
         {% include "templates/albums/add-album.html" %}
         {% endwith %}
