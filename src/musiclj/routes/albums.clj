@@ -11,12 +11,15 @@
 (defn render-recently-added-html
   "Simply renders the recently added page with the given context."
   [ctx]
-  (layout/render "albums/recently-added.html" ctx))
+  (layout/render "albums/recently-added.html" ctx)
+  )
 
 (defn recently-added-page
   "Renders out the recently-added page."
   []
-  (render-recently-added-html {:albums (album/get-recently-added)}))
+  (render-recently-added-html {:albums (album/get-recently-added)
+                               :artists (map :name (album/get-artists))
+                               }))
 
 (defn artist-page
   "Renders out the artist page."
@@ -52,6 +55,7 @@
         ctx (merge {:form form-ctx}
               {:albums (album/get-recently-added)})]
     (render-recently-added-html ctx)))
+
 
 (defroutes album-routes
   (GET "/albums/recently-added"   []              (restricted (recently-added-page)))

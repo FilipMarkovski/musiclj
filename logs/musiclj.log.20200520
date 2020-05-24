@@ -1,0 +1,1001 @@
+2020-May-20 22:19:51 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 22:19:57 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 22:19:57 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 22:20:03 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 22:20:03 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 22:25:06 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 22:25:11 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 22:25:11 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 22:32:04 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 22:32:09 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 22:39:14 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 22:39:19 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 22:39:19 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 22:56:28 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 22:56:33 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 22:56:40 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 22:56:45 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 22:56:45 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 22:56:51 +0200 UnknownHost ERROR [musiclj.middleware] - 
+[1;31mclojure.lang.ExceptionInfo[m: [3mUnrecognized tag found {% foreach artistinartists %} on line 92 for template file:/Users/ida/Projekti/01-Clojure-Projects/musiclj/resources/templates/songs/add-all.html[m
+    [1mdata[m: {:type :selmer-validation-error,
+           :error "Unrecognized tag found",
+           :error-template
+           "<html>\n<head>\n    <font face='arial'>\n        <style type='text/css'>\n            body {\n                margin: 0px;\n                background: #ececec;\n            }\n            #header {\n                padding-top:  5px;\n                padding-left: 25px;\n                color: white;\n                background: #a32306;\n                text-shadow: 1px 1px #33333;\n                border-bottom: 1px solid #710000;\n            }\n            #error-wrap {\n                border-top: 5px solid #d46e6b;\n            }\n            #error-message {\n                color: #800000;\n                background: #f5a29f;\n                padding: 10px;\n                text-shadow: 1px 1px #FFBBBB;\n                border-top: 1px solid #f4b1ae;\n            }\n            #file-wrap {\n                border-top: 5px solid #2a2a2a;\n            }\n            #file {\n                color: white;\n                background: #333333;\n                padding: 10px;\n                padding-left: 20px;\n                text-shadow: 1px 1px #555555;\n                border-top: 1px solid #444444;\n            }\n            #line-number {\n                width=20px;\n                color: #8b8b8b;\n                background: #d6d6d6;\n                float: left;\n                padding: 5px;\n                text-shadow: 1px 1px #EEEEEE;\n                border-right: 1px solid #b6b6b6;\n            }\n            #line-content {\n                float: left;\n                padding: 5px;\n            }\n            #error-content {\n                float: left;\n                width: 100%;\n                border-top: 5px solid #cdcdcd;\n                border-bottom: 5px solid #cdcdcd;\n            }\n        </style>\n</head>\n<body>\n<div id='header'>\n    <h1>Template Compilation Error</h1>\n</div>\n<div id='error-wrap'>\n    <div id='error-message'>{{error}}.</div>\n</div>\n{% if template %}\n<div id='file-wrap'>\n    <div id='file'>In {{template}}{% if line %} on line {{line}}{% endif %}.</div>\n</div>\n{% for error in validation-errors %}\n<div id='error-content'>\n    <div id='line-number'>{{error.line}}</div>\n    <div id='line-content'>{{error.tag}}</div>\n</div>\n{% endfor %}\n{% endif %}\n</body>\n</html>",
+           :line 92,
+           :template
+           #<URL file:/Users/ida/Projekti/01-Clojure-Projects/musiclj/resources/templates/songs/add-all.html>,
+           :validation-errors ({:tag "{% foreach artistinartists %}", :line 92})}
+                                                                     [33mclojure.core/[1;33mex-info[m  [32m                   core.clj: 4403[m
+                                                        [33mselmer.validator/[1;33mvalidation-error[m  [32m              validator.clj:   40[m
+                                                        [33mselmer.validator/[1;33mvalidation-error[m  [32m              validator.clj:   29[m
+                                                              [33mselmer.validator/[1;33mvalide-tag[m  [32m              validator.clj:   64[m
+                                                           [33mselmer.validator/[1;33mvalidate-tags[m  [32m              validator.clj:  108[m
+                                                                [33mselmer.validator/[1;33mvalidate[m  [32m              validator.clj:  116[m
+                                                     [33mselmer.template-parser/[1;33mread-template[m  [32m        template_parser.clj:  195[m
+                                               [33mselmer.template-parser/[1;33mpreprocess-template[m  [32m        template_parser.clj:  251[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  439[m
+                                                [33mselmer.template-parser/insert-includes/[1;33mfn[m  [32m        template_parser.clj:   50[m
+                                                   [33mselmer.template-parser/[1;33minsert-includes[m  [32m        template_parser.clj:   40[m
+                                               [33mselmer.template-parser/[1;33mpreprocess-template[m  [32m        template_parser.clj:  251[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  410[m
+                                                                 [33mselmer.parser/[1;33mparse-file[m  [32m                 parser.clj:  235[m
+                                                                      [33mselmer.parser/[1;33mparse[m  [32m                 parser.clj:  261[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  442[m
+                                                                [33mselmer.parser/[1;33mrender-file[m  [32m                 parser.clj:  122[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  425[m
+                                                 [33mmusiclj.layout.RenderableTemplate/[1;33mrender[m  [32m                 layout.clj:   24[m
+                                                           [33mcompojure.response/eval1649/[1;33mfn[m  [32m               response.clj:   32[m
+                                                         [33mcompojure.response/eval1610/fn/[1;33mG[m  [32m               response.clj:    9[m
+                                                             [33mcompojure.core/make-route/[1;33mfn[m  [32m                   core.clj:  100[m
+                                                               [33mcompojure.core/if-route/[1;33mfn[m  [32m                   core.clj:   46[m
+                                                              [33mcompojure.core/if-method/[1;33mfn[m  [32m                   core.clj:   31[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                               [33mnoir-exception.core/wrap-internal-error/[1;33mfn[m  [32m                   core.clj:  121[m
+                                                 [33mnoir.util.middleware/wrap-request-map/[1;33mfn[m  [32m             middleware.clj:   39[m
+                                    [33mring.middleware.keyword-params/wrap-keyword-params/[1;33mfn[m  [32m         keyword_params.clj:   35[m
+                                      [33mring.middleware.nested-params/wrap-nested-params/[1;33mfn[m  [32m          nested_params.clj:   84[m
+                                [33mring.middleware.multipart-params/wrap-multipart-params/[1;33mfn[m  [32m       multipart_params.clj:  118[m
+                                                    [33mring.middleware.params/wrap-params/[1;33mfn[m  [32m                 params.clj:   64[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                            [33mring.middleware.absolute-redirects/wrap-absolute-redirects/[1;33mfn[m  [32m     absolute_redirects.clj:   36[m
+                                                [33mring.middleware.resource/wrap-resource/[1;33mfn[m  [32m               resource.clj:   26[m
+                                        [33mring.middleware.content-type/wrap-content-type/[1;33mfn[m  [32m           content_type.clj:   30[m
+                                        [33mring.middleware.not-modified/wrap-not-modified/[1;33mfn[m  [32m           not_modified.clj:   44[m
+                                         [33mring.middleware.x-headers/wrap-xss-protection/[1;33mfn[m  [32m              x_headers.clj:   71[m
+                                          [33mring.middleware.x-headers/wrap-frame-options/[1;33mfn[m  [32m              x_headers.clj:   38[m
+                                   [33mring.middleware.x-headers/wrap-content-type-options/[1;33mfn[m  [32m              x_headers.clj:   53[m
+                                                       [33mhiccup.middleware/wrap-base-url/[1;33mfn[m  [32m             middleware.clj:   12[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                  [33mring.middleware.format-response/wrap-format-response/[1;33mfn[m  [32m        format_response.clj:  174[m
+                                                [33mnoir.util.middleware/wrap-access-rules/[1;33mfn[m  [32m             middleware.clj:  134[m
+                                                  [33mnoir.validation/wrap-noir-validation/[1;33mfn[m  [32m             validation.clj:  155[m
+                                                             [33mnoir.cookies/noir-cookies/[1;33mfn[m  [32m                cookies.clj:   72[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                                                               [33mnoir.session/noir-flash/[1;33mfn[m  [32m                session.clj:  158[m
+                                                      [33mring.middleware.flash/wrap-flash/[1;33mfn[m  [32m                  flash.clj:   35[m
+                                                             [33mnoir.session/noir-session/[1;33mfn[m  [32m                session.clj:  109[m
+                             [33mring.middleware.session-timeout/wrap-idle-session-timeout/[1;33mfn[m  [32m        session_timeout.clj:   25[m
+                                                  [33mring.middleware.session/wrap-session/[1;33mfn[m  [32m                session.clj:   98[m
+                                                                  [37mclojure.lang.Var.invoke[m  [32m                   Var.java:  379[m
+                                                    [33mring.middleware.reload/wrap-reload/[1;33mfn[m  [32m                 reload.clj:   22[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-log/[1;33mfn[m  [32m             stacktrace.clj:   23[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-web/[1;33mfn[m  [32m             stacktrace.clj:   86[m
+                                                      [33mring.adapter.jetty/proxy-handler/[1;33mfn[m  [32m                  jetty.clj:   20[m
+[37mring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle[m  [32m                                 [m
+                                   [37morg.eclipse.jetty.server.handler.HandlerWrapper.handle[m  [32m        HandlerWrapper.java:  116[m
+                                                   [37morg.eclipse.jetty.server.Server.handle[m  [32m                Server.java:  369[m
+                            [37morg.eclipse.jetty.server.AbstractHttpConnection.handleRequest[m  [32mAbstractHttpConnection.java:  486[m
+                           [37morg.eclipse.jetty.server.AbstractHttpConnection.headerComplete[m  [32mAbstractHttpConnection.java:  933[m
+            [37morg.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete[m  [32mAbstractHttpConnection.java:  995[m
+                                              [37morg.eclipse.jetty.http.HttpParser.parseNext[m  [32m            HttpParser.java:  644[m
+                                         [37morg.eclipse.jetty.http.HttpParser.parseAvailable[m  [32m            HttpParser.java:  235[m
+                                      [37morg.eclipse.jetty.server.AsyncHttpConnection.handle[m  [32m   AsyncHttpConnection.java:   82[m
+                                    [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint.handle[m  [32m SelectChannelEndPoint.java:  668[m
+                                     [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run[m  [32m SelectChannelEndPoint.java:   52[m
+                                    [37morg.eclipse.jetty.util.thread.QueuedThreadPool.runJob[m  [32m      QueuedThreadPool.java:  608[m
+                                     [37morg.eclipse.jetty.util.thread.QueuedThreadPool$3.run[m  [32m      QueuedThreadPool.java:  543[m
+                                                                     [37mjava.lang.Thread.run[m  [32m                Thread.java:  748[m
+
+2020-May-20 22:57:01 +0200 UnknownHost ERROR [musiclj.middleware] - 
+[1;31mclojure.lang.ExceptionInfo[m: [3mUnrecognized tag found {% foreach artistinartists %} on line 92 for template file:/Users/ida/Projekti/01-Clojure-Projects/musiclj/resources/templates/songs/add-all.html[m
+    [1mdata[m: {:type :selmer-validation-error,
+           :error "Unrecognized tag found",
+           :error-template
+           "<html>\n<head>\n    <font face='arial'>\n        <style type='text/css'>\n            body {\n                margin: 0px;\n                background: #ececec;\n            }\n            #header {\n                padding-top:  5px;\n                padding-left: 25px;\n                color: white;\n                background: #a32306;\n                text-shadow: 1px 1px #33333;\n                border-bottom: 1px solid #710000;\n            }\n            #error-wrap {\n                border-top: 5px solid #d46e6b;\n            }\n            #error-message {\n                color: #800000;\n                background: #f5a29f;\n                padding: 10px;\n                text-shadow: 1px 1px #FFBBBB;\n                border-top: 1px solid #f4b1ae;\n            }\n            #file-wrap {\n                border-top: 5px solid #2a2a2a;\n            }\n            #file {\n                color: white;\n                background: #333333;\n                padding: 10px;\n                padding-left: 20px;\n                text-shadow: 1px 1px #555555;\n                border-top: 1px solid #444444;\n            }\n            #line-number {\n                width=20px;\n                color: #8b8b8b;\n                background: #d6d6d6;\n                float: left;\n                padding: 5px;\n                text-shadow: 1px 1px #EEEEEE;\n                border-right: 1px solid #b6b6b6;\n            }\n            #line-content {\n                float: left;\n                padding: 5px;\n            }\n            #error-content {\n                float: left;\n                width: 100%;\n                border-top: 5px solid #cdcdcd;\n                border-bottom: 5px solid #cdcdcd;\n            }\n        </style>\n</head>\n<body>\n<div id='header'>\n    <h1>Template Compilation Error</h1>\n</div>\n<div id='error-wrap'>\n    <div id='error-message'>{{error}}.</div>\n</div>\n{% if template %}\n<div id='file-wrap'>\n    <div id='file'>In {{template}}{% if line %} on line {{line}}{% endif %}.</div>\n</div>\n{% for error in validation-errors %}\n<div id='error-content'>\n    <div id='line-number'>{{error.line}}</div>\n    <div id='line-content'>{{error.tag}}</div>\n</div>\n{% endfor %}\n{% endif %}\n</body>\n</html>",
+           :line 92,
+           :template
+           #<URL file:/Users/ida/Projekti/01-Clojure-Projects/musiclj/resources/templates/songs/add-all.html>,
+           :validation-errors ({:tag "{% foreach artistinartists %}", :line 92})}
+                                                                     [33mclojure.core/[1;33mex-info[m  [32m                   core.clj: 4403[m
+                                                        [33mselmer.validator/[1;33mvalidation-error[m  [32m              validator.clj:   40[m
+                                                        [33mselmer.validator/[1;33mvalidation-error[m  [32m              validator.clj:   29[m
+                                                              [33mselmer.validator/[1;33mvalide-tag[m  [32m              validator.clj:   64[m
+                                                           [33mselmer.validator/[1;33mvalidate-tags[m  [32m              validator.clj:  108[m
+                                                                [33mselmer.validator/[1;33mvalidate[m  [32m              validator.clj:  116[m
+                                                     [33mselmer.template-parser/[1;33mread-template[m  [32m        template_parser.clj:  195[m
+                                               [33mselmer.template-parser/[1;33mpreprocess-template[m  [32m        template_parser.clj:  251[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  439[m
+                                                [33mselmer.template-parser/insert-includes/[1;33mfn[m  [32m        template_parser.clj:   50[m
+                                                   [33mselmer.template-parser/[1;33minsert-includes[m  [32m        template_parser.clj:   40[m
+                                               [33mselmer.template-parser/[1;33mpreprocess-template[m  [32m        template_parser.clj:  251[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  410[m
+                                                                 [33mselmer.parser/[1;33mparse-file[m  [32m                 parser.clj:  235[m
+                                                                      [33mselmer.parser/[1;33mparse[m  [32m                 parser.clj:  261[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  442[m
+                                                                [33mselmer.parser/[1;33mrender-file[m  [32m                 parser.clj:  122[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  425[m
+                                                 [33mmusiclj.layout.RenderableTemplate/[1;33mrender[m  [32m                 layout.clj:   24[m
+                                                           [33mcompojure.response/eval1649/[1;33mfn[m  [32m               response.clj:   32[m
+                                                         [33mcompojure.response/eval1610/fn/[1;33mG[m  [32m               response.clj:    9[m
+                                                             [33mcompojure.core/make-route/[1;33mfn[m  [32m                   core.clj:  100[m
+                                                               [33mcompojure.core/if-route/[1;33mfn[m  [32m                   core.clj:   46[m
+                                                              [33mcompojure.core/if-method/[1;33mfn[m  [32m                   core.clj:   31[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                               [33mnoir-exception.core/wrap-internal-error/[1;33mfn[m  [32m                   core.clj:  121[m
+                                                 [33mnoir.util.middleware/wrap-request-map/[1;33mfn[m  [32m             middleware.clj:   39[m
+                                    [33mring.middleware.keyword-params/wrap-keyword-params/[1;33mfn[m  [32m         keyword_params.clj:   35[m
+                                      [33mring.middleware.nested-params/wrap-nested-params/[1;33mfn[m  [32m          nested_params.clj:   84[m
+                                [33mring.middleware.multipart-params/wrap-multipart-params/[1;33mfn[m  [32m       multipart_params.clj:  118[m
+                                                    [33mring.middleware.params/wrap-params/[1;33mfn[m  [32m                 params.clj:   64[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                            [33mring.middleware.absolute-redirects/wrap-absolute-redirects/[1;33mfn[m  [32m     absolute_redirects.clj:   36[m
+                                                [33mring.middleware.resource/wrap-resource/[1;33mfn[m  [32m               resource.clj:   26[m
+                                        [33mring.middleware.content-type/wrap-content-type/[1;33mfn[m  [32m           content_type.clj:   30[m
+                                        [33mring.middleware.not-modified/wrap-not-modified/[1;33mfn[m  [32m           not_modified.clj:   44[m
+                                         [33mring.middleware.x-headers/wrap-xss-protection/[1;33mfn[m  [32m              x_headers.clj:   71[m
+                                          [33mring.middleware.x-headers/wrap-frame-options/[1;33mfn[m  [32m              x_headers.clj:   38[m
+                                   [33mring.middleware.x-headers/wrap-content-type-options/[1;33mfn[m  [32m              x_headers.clj:   53[m
+                                                       [33mhiccup.middleware/wrap-base-url/[1;33mfn[m  [32m             middleware.clj:   12[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                  [33mring.middleware.format-response/wrap-format-response/[1;33mfn[m  [32m        format_response.clj:  174[m
+                                                [33mnoir.util.middleware/wrap-access-rules/[1;33mfn[m  [32m             middleware.clj:  134[m
+                                                  [33mnoir.validation/wrap-noir-validation/[1;33mfn[m  [32m             validation.clj:  155[m
+                                                             [33mnoir.cookies/noir-cookies/[1;33mfn[m  [32m                cookies.clj:   72[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                                                               [33mnoir.session/noir-flash/[1;33mfn[m  [32m                session.clj:  158[m
+                                                      [33mring.middleware.flash/wrap-flash/[1;33mfn[m  [32m                  flash.clj:   35[m
+                                                             [33mnoir.session/noir-session/[1;33mfn[m  [32m                session.clj:  109[m
+                             [33mring.middleware.session-timeout/wrap-idle-session-timeout/[1;33mfn[m  [32m        session_timeout.clj:   25[m
+                                                  [33mring.middleware.session/wrap-session/[1;33mfn[m  [32m                session.clj:   98[m
+                                                                  [37mclojure.lang.Var.invoke[m  [32m                   Var.java:  379[m
+                                                    [33mring.middleware.reload/wrap-reload/[1;33mfn[m  [32m                 reload.clj:   22[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-log/[1;33mfn[m  [32m             stacktrace.clj:   23[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-web/[1;33mfn[m  [32m             stacktrace.clj:   86[m
+                                                      [33mring.adapter.jetty/proxy-handler/[1;33mfn[m  [32m                  jetty.clj:   20[m
+[37mring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle[m  [32m                                 [m
+                                   [37morg.eclipse.jetty.server.handler.HandlerWrapper.handle[m  [32m        HandlerWrapper.java:  116[m
+                                                   [37morg.eclipse.jetty.server.Server.handle[m  [32m                Server.java:  369[m
+                            [37morg.eclipse.jetty.server.AbstractHttpConnection.handleRequest[m  [32mAbstractHttpConnection.java:  486[m
+                           [37morg.eclipse.jetty.server.AbstractHttpConnection.headerComplete[m  [32mAbstractHttpConnection.java:  933[m
+            [37morg.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete[m  [32mAbstractHttpConnection.java:  995[m
+                                              [37morg.eclipse.jetty.http.HttpParser.parseNext[m  [32m            HttpParser.java:  644[m
+                                         [37morg.eclipse.jetty.http.HttpParser.parseAvailable[m  [32m            HttpParser.java:  235[m
+                                      [37morg.eclipse.jetty.server.AsyncHttpConnection.handle[m  [32m   AsyncHttpConnection.java:   82[m
+                                    [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint.handle[m  [32m SelectChannelEndPoint.java:  668[m
+                                     [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run[m  [32m SelectChannelEndPoint.java:   52[m
+                                    [37morg.eclipse.jetty.util.thread.QueuedThreadPool.runJob[m  [32m      QueuedThreadPool.java:  608[m
+                                     [37morg.eclipse.jetty.util.thread.QueuedThreadPool$3.run[m  [32m      QueuedThreadPool.java:  543[m
+                                                                     [37mjava.lang.Thread.run[m  [32m                Thread.java:  748[m
+
+2020-May-20 22:57:06 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 22:57:06 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 22:57:25 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 22:57:30 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 22:57:30 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 22:57:41 +0200 UnknownHost ERROR [musiclj.middleware] - 
+[1;31mclojure.lang.ExceptionInfo[m: [3mUnrecognized tag found {% foreach ainartists %} on line 92 for template file:/Users/ida/Projekti/01-Clojure-Projects/musiclj/resources/templates/songs/add-all.html[m
+    [1mdata[m: {:type :selmer-validation-error,
+           :error "Unrecognized tag found",
+           :error-template
+           "<html>\n<head>\n    <font face='arial'>\n        <style type='text/css'>\n            body {\n                margin: 0px;\n                background: #ececec;\n            }\n            #header {\n                padding-top:  5px;\n                padding-left: 25px;\n                color: white;\n                background: #a32306;\n                text-shadow: 1px 1px #33333;\n                border-bottom: 1px solid #710000;\n            }\n            #error-wrap {\n                border-top: 5px solid #d46e6b;\n            }\n            #error-message {\n                color: #800000;\n                background: #f5a29f;\n                padding: 10px;\n                text-shadow: 1px 1px #FFBBBB;\n                border-top: 1px solid #f4b1ae;\n            }\n            #file-wrap {\n                border-top: 5px solid #2a2a2a;\n            }\n            #file {\n                color: white;\n                background: #333333;\n                padding: 10px;\n                padding-left: 20px;\n                text-shadow: 1px 1px #555555;\n                border-top: 1px solid #444444;\n            }\n            #line-number {\n                width=20px;\n                color: #8b8b8b;\n                background: #d6d6d6;\n                float: left;\n                padding: 5px;\n                text-shadow: 1px 1px #EEEEEE;\n                border-right: 1px solid #b6b6b6;\n            }\n            #line-content {\n                float: left;\n                padding: 5px;\n            }\n            #error-content {\n                float: left;\n                width: 100%;\n                border-top: 5px solid #cdcdcd;\n                border-bottom: 5px solid #cdcdcd;\n            }\n        </style>\n</head>\n<body>\n<div id='header'>\n    <h1>Template Compilation Error</h1>\n</div>\n<div id='error-wrap'>\n    <div id='error-message'>{{error}}.</div>\n</div>\n{% if template %}\n<div id='file-wrap'>\n    <div id='file'>In {{template}}{% if line %} on line {{line}}{% endif %}.</div>\n</div>\n{% for error in validation-errors %}\n<div id='error-content'>\n    <div id='line-number'>{{error.line}}</div>\n    <div id='line-content'>{{error.tag}}</div>\n</div>\n{% endfor %}\n{% endif %}\n</body>\n</html>",
+           :line 92,
+           :template
+           #<URL file:/Users/ida/Projekti/01-Clojure-Projects/musiclj/resources/templates/songs/add-all.html>,
+           :validation-errors ({:tag "{% foreach ainartists %}", :line 92})}
+                                                                     [33mclojure.core/[1;33mex-info[m  [32m                   core.clj: 4403[m
+                                                        [33mselmer.validator/[1;33mvalidation-error[m  [32m              validator.clj:   40[m
+                                                        [33mselmer.validator/[1;33mvalidation-error[m  [32m              validator.clj:   29[m
+                                                              [33mselmer.validator/[1;33mvalide-tag[m  [32m              validator.clj:   64[m
+                                                           [33mselmer.validator/[1;33mvalidate-tags[m  [32m              validator.clj:  108[m
+                                                                [33mselmer.validator/[1;33mvalidate[m  [32m              validator.clj:  116[m
+                                                     [33mselmer.template-parser/[1;33mread-template[m  [32m        template_parser.clj:  195[m
+                                               [33mselmer.template-parser/[1;33mpreprocess-template[m  [32m        template_parser.clj:  251[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  439[m
+                                                [33mselmer.template-parser/insert-includes/[1;33mfn[m  [32m        template_parser.clj:   50[m
+                                                   [33mselmer.template-parser/[1;33minsert-includes[m  [32m        template_parser.clj:   40[m
+                                               [33mselmer.template-parser/[1;33mpreprocess-template[m  [32m        template_parser.clj:  251[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  410[m
+                                                                 [33mselmer.parser/[1;33mparse-file[m  [32m                 parser.clj:  235[m
+                                                                      [33mselmer.parser/[1;33mparse[m  [32m                 parser.clj:  261[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  442[m
+                                                                [33mselmer.parser/[1;33mrender-file[m  [32m                 parser.clj:  122[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  425[m
+                                                 [33mmusiclj.layout.RenderableTemplate/[1;33mrender[m  [32m                 layout.clj:   24[m
+                                                           [33mcompojure.response/eval1649/[1;33mfn[m  [32m               response.clj:   32[m
+                                                         [33mcompojure.response/eval1610/fn/[1;33mG[m  [32m               response.clj:    9[m
+                                                             [33mcompojure.core/make-route/[1;33mfn[m  [32m                   core.clj:  100[m
+                                                               [33mcompojure.core/if-route/[1;33mfn[m  [32m                   core.clj:   46[m
+                                                              [33mcompojure.core/if-method/[1;33mfn[m  [32m                   core.clj:   31[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                               [33mnoir-exception.core/wrap-internal-error/[1;33mfn[m  [32m                   core.clj:  121[m
+                                                 [33mnoir.util.middleware/wrap-request-map/[1;33mfn[m  [32m             middleware.clj:   39[m
+                                    [33mring.middleware.keyword-params/wrap-keyword-params/[1;33mfn[m  [32m         keyword_params.clj:   35[m
+                                      [33mring.middleware.nested-params/wrap-nested-params/[1;33mfn[m  [32m          nested_params.clj:   84[m
+                                [33mring.middleware.multipart-params/wrap-multipart-params/[1;33mfn[m  [32m       multipart_params.clj:  118[m
+                                                    [33mring.middleware.params/wrap-params/[1;33mfn[m  [32m                 params.clj:   64[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                            [33mring.middleware.absolute-redirects/wrap-absolute-redirects/[1;33mfn[m  [32m     absolute_redirects.clj:   36[m
+                                                [33mring.middleware.resource/wrap-resource/[1;33mfn[m  [32m               resource.clj:   26[m
+                                        [33mring.middleware.content-type/wrap-content-type/[1;33mfn[m  [32m           content_type.clj:   30[m
+                                        [33mring.middleware.not-modified/wrap-not-modified/[1;33mfn[m  [32m           not_modified.clj:   44[m
+                                         [33mring.middleware.x-headers/wrap-xss-protection/[1;33mfn[m  [32m              x_headers.clj:   71[m
+                                          [33mring.middleware.x-headers/wrap-frame-options/[1;33mfn[m  [32m              x_headers.clj:   38[m
+                                   [33mring.middleware.x-headers/wrap-content-type-options/[1;33mfn[m  [32m              x_headers.clj:   53[m
+                                                       [33mhiccup.middleware/wrap-base-url/[1;33mfn[m  [32m             middleware.clj:   12[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                  [33mring.middleware.format-response/wrap-format-response/[1;33mfn[m  [32m        format_response.clj:  174[m
+                                                [33mnoir.util.middleware/wrap-access-rules/[1;33mfn[m  [32m             middleware.clj:  134[m
+                                                  [33mnoir.validation/wrap-noir-validation/[1;33mfn[m  [32m             validation.clj:  155[m
+                                                             [33mnoir.cookies/noir-cookies/[1;33mfn[m  [32m                cookies.clj:   72[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                                                               [33mnoir.session/noir-flash/[1;33mfn[m  [32m                session.clj:  158[m
+                                                      [33mring.middleware.flash/wrap-flash/[1;33mfn[m  [32m                  flash.clj:   35[m
+                                                             [33mnoir.session/noir-session/[1;33mfn[m  [32m                session.clj:  109[m
+                             [33mring.middleware.session-timeout/wrap-idle-session-timeout/[1;33mfn[m  [32m        session_timeout.clj:   25[m
+                                                  [33mring.middleware.session/wrap-session/[1;33mfn[m  [32m                session.clj:   98[m
+                                                                  [37mclojure.lang.Var.invoke[m  [32m                   Var.java:  379[m
+                                                    [33mring.middleware.reload/wrap-reload/[1;33mfn[m  [32m                 reload.clj:   22[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-log/[1;33mfn[m  [32m             stacktrace.clj:   23[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-web/[1;33mfn[m  [32m             stacktrace.clj:   86[m
+                                                      [33mring.adapter.jetty/proxy-handler/[1;33mfn[m  [32m                  jetty.clj:   20[m
+[37mring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle[m  [32m                                 [m
+                                   [37morg.eclipse.jetty.server.handler.HandlerWrapper.handle[m  [32m        HandlerWrapper.java:  116[m
+                                                   [37morg.eclipse.jetty.server.Server.handle[m  [32m                Server.java:  369[m
+                            [37morg.eclipse.jetty.server.AbstractHttpConnection.handleRequest[m  [32mAbstractHttpConnection.java:  486[m
+                           [37morg.eclipse.jetty.server.AbstractHttpConnection.headerComplete[m  [32mAbstractHttpConnection.java:  933[m
+            [37morg.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete[m  [32mAbstractHttpConnection.java:  995[m
+                                              [37morg.eclipse.jetty.http.HttpParser.parseNext[m  [32m            HttpParser.java:  644[m
+                                         [37morg.eclipse.jetty.http.HttpParser.parseAvailable[m  [32m            HttpParser.java:  235[m
+                                      [37morg.eclipse.jetty.server.AsyncHttpConnection.handle[m  [32m   AsyncHttpConnection.java:   82[m
+                                    [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint.handle[m  [32m SelectChannelEndPoint.java:  668[m
+                                     [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run[m  [32m SelectChannelEndPoint.java:   52[m
+                                    [37morg.eclipse.jetty.util.thread.QueuedThreadPool.runJob[m  [32m      QueuedThreadPool.java:  608[m
+                                     [37morg.eclipse.jetty.util.thread.QueuedThreadPool$3.run[m  [32m      QueuedThreadPool.java:  543[m
+                                                                     [37mjava.lang.Thread.run[m  [32m                Thread.java:  748[m
+
+2020-May-20 22:57:44 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 22:57:44 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:01:06 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:01:11 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:01:11 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:01:33 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:01:33 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:01:59 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:02:04 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:02:04 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:02:41 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:02:41 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:03:00 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:03:05 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:03:05 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:03:40 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:03:40 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:03:51 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:03:56 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:03:56 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:04:38 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:04:38 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:04:49 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:04:54 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:04:54 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:05:13 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:05:13 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:08:47 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:08:52 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:08:52 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:09:09 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:09:09 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:09:20 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:09:25 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:09:25 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:10:49 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:10:54 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:11:01 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:11:06 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:11:06 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:11:27 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:11:27 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:11:41 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:11:47 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:11:47 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:12:09 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:12:09 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:16:09 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:16:14 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:16:14 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:19:26 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:19:32 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:19:38 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:19:43 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:19:43 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:19:59 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:19:59 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:20:12 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:20:17 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:20:17 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:20:21 +0200 UnknownHost ERROR [musiclj.middleware] - 
+[1;31mjava.lang.Exception[m: [3mOn filter body 'artists.name|join:", "' and filter 'join:", "' this error occurred:Expected 'nil' to be a collection of some sort.[m
+                                           [33mselmer.filter-parser/compile-filter-body/fn/[1;33mfn[m  [32m          filter_parser.clj:  121[m
+                                                                [33mclojure.core.protocols/[1;33mfn[m  [32m              protocols.clj:  143[m
+                                                              [33mclojure.core.protocols/fn/[1;33mG[m  [32m              protocols.clj:   19[m
+                                                        [33mclojure.core.protocols/[1;33mseq-reduce[m  [32m              protocols.clj:   31[m
+                                                                [33mclojure.core.protocols/[1;33mfn[m  [32m              protocols.clj:   54[m
+                                                              [33mclojure.core.protocols/fn/[1;33mG[m  [32m              protocols.clj:   13[m
+                                                                      [33mclojure.core/[1;33mreduce[m  [32m                   core.clj: 6289[m
+                                              [33mselmer.filter-parser/compile-filter-body/[1;33mfn[m  [32m          filter_parser.clj:  123[m
+                                                     [33mselmer.node.FunctionNode/[1;33mrender-node[m  [32m                   node.clj:   19[m
+                                                            [33mselmer.parser/[1;33mrender-template[m  [32m                 parser.clj:   93[m
+                                                              [33mselmer.tags/with-handler/[1;33mfn[m  [32m                   tags.clj:  211[m
+                                                     [33mselmer.node.FunctionNode/[1;33mrender-node[m  [32m                   node.clj:   19[m
+                                                            [33mselmer.parser/[1;33mrender-template[m  [32m                 parser.clj:   93[m
+                                                             [33mselmer.tags/block-handler/[1;33mfn[m  [32m                   tags.clj:  166[m
+                                                     [33mselmer.node.FunctionNode/[1;33mrender-node[m  [32m                   node.clj:   19[m
+                                                            [33mselmer.parser/[1;33mrender-template[m  [32m                 parser.clj:   93[m
+                                                                [33mselmer.parser/[1;33mrender-file[m  [32m                 parser.clj:  125[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  425[m
+                                                 [33mmusiclj.layout.RenderableTemplate/[1;33mrender[m  [32m                 layout.clj:   24[m
+                                                           [33mcompojure.response/eval1649/[1;33mfn[m  [32m               response.clj:   32[m
+                                                         [33mcompojure.response/eval1610/fn/[1;33mG[m  [32m               response.clj:    9[m
+                                                             [33mcompojure.core/make-route/[1;33mfn[m  [32m                   core.clj:  100[m
+                                                               [33mcompojure.core/if-route/[1;33mfn[m  [32m                   core.clj:   46[m
+                                                              [33mcompojure.core/if-method/[1;33mfn[m  [32m                   core.clj:   31[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                               [33mnoir-exception.core/wrap-internal-error/[1;33mfn[m  [32m                   core.clj:  121[m
+                                                 [33mnoir.util.middleware/wrap-request-map/[1;33mfn[m  [32m             middleware.clj:   39[m
+                                    [33mring.middleware.keyword-params/wrap-keyword-params/[1;33mfn[m  [32m         keyword_params.clj:   35[m
+                                      [33mring.middleware.nested-params/wrap-nested-params/[1;33mfn[m  [32m          nested_params.clj:   84[m
+                                [33mring.middleware.multipart-params/wrap-multipart-params/[1;33mfn[m  [32m       multipart_params.clj:  118[m
+                                                    [33mring.middleware.params/wrap-params/[1;33mfn[m  [32m                 params.clj:   64[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                            [33mring.middleware.absolute-redirects/wrap-absolute-redirects/[1;33mfn[m  [32m     absolute_redirects.clj:   36[m
+                                                [33mring.middleware.resource/wrap-resource/[1;33mfn[m  [32m               resource.clj:   26[m
+                                        [33mring.middleware.content-type/wrap-content-type/[1;33mfn[m  [32m           content_type.clj:   30[m
+                                        [33mring.middleware.not-modified/wrap-not-modified/[1;33mfn[m  [32m           not_modified.clj:   44[m
+                                         [33mring.middleware.x-headers/wrap-xss-protection/[1;33mfn[m  [32m              x_headers.clj:   71[m
+                                          [33mring.middleware.x-headers/wrap-frame-options/[1;33mfn[m  [32m              x_headers.clj:   38[m
+                                   [33mring.middleware.x-headers/wrap-content-type-options/[1;33mfn[m  [32m              x_headers.clj:   53[m
+                                                       [33mhiccup.middleware/wrap-base-url/[1;33mfn[m  [32m             middleware.clj:   12[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                  [33mring.middleware.format-response/wrap-format-response/[1;33mfn[m  [32m        format_response.clj:  174[m
+                                                [33mnoir.util.middleware/wrap-access-rules/[1;33mfn[m  [32m             middleware.clj:  134[m
+                                                  [33mnoir.validation/wrap-noir-validation/[1;33mfn[m  [32m             validation.clj:  155[m
+                                                             [33mnoir.cookies/noir-cookies/[1;33mfn[m  [32m                cookies.clj:   72[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                                                               [33mnoir.session/noir-flash/[1;33mfn[m  [32m                session.clj:  158[m
+                                                      [33mring.middleware.flash/wrap-flash/[1;33mfn[m  [32m                  flash.clj:   35[m
+                                                             [33mnoir.session/noir-session/[1;33mfn[m  [32m                session.clj:  109[m
+                             [33mring.middleware.session-timeout/wrap-idle-session-timeout/[1;33mfn[m  [32m        session_timeout.clj:   25[m
+                                                  [33mring.middleware.session/wrap-session/[1;33mfn[m  [32m                session.clj:   98[m
+                                                                  [37mclojure.lang.Var.invoke[m  [32m                   Var.java:  379[m
+                                                    [33mring.middleware.reload/wrap-reload/[1;33mfn[m  [32m                 reload.clj:   22[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-log/[1;33mfn[m  [32m             stacktrace.clj:   23[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-web/[1;33mfn[m  [32m             stacktrace.clj:   86[m
+                                                      [33mring.adapter.jetty/proxy-handler/[1;33mfn[m  [32m                  jetty.clj:   20[m
+[37mring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle[m  [32m                                 [m
+                                   [37morg.eclipse.jetty.server.handler.HandlerWrapper.handle[m  [32m        HandlerWrapper.java:  116[m
+                                                   [37morg.eclipse.jetty.server.Server.handle[m  [32m                Server.java:  369[m
+                            [37morg.eclipse.jetty.server.AbstractHttpConnection.handleRequest[m  [32mAbstractHttpConnection.java:  486[m
+                           [37morg.eclipse.jetty.server.AbstractHttpConnection.headerComplete[m  [32mAbstractHttpConnection.java:  933[m
+            [37morg.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete[m  [32mAbstractHttpConnection.java:  995[m
+                                              [37morg.eclipse.jetty.http.HttpParser.parseNext[m  [32m            HttpParser.java:  644[m
+                                         [37morg.eclipse.jetty.http.HttpParser.parseAvailable[m  [32m            HttpParser.java:  235[m
+                                      [37morg.eclipse.jetty.server.AsyncHttpConnection.handle[m  [32m   AsyncHttpConnection.java:   82[m
+                                    [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint.handle[m  [32m SelectChannelEndPoint.java:  668[m
+                                     [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run[m  [32m SelectChannelEndPoint.java:   52[m
+                                    [37morg.eclipse.jetty.util.thread.QueuedThreadPool.runJob[m  [32m      QueuedThreadPool.java:  608[m
+                                     [37morg.eclipse.jetty.util.thread.QueuedThreadPool$3.run[m  [32m      QueuedThreadPool.java:  543[m
+                                                                     [37mjava.lang.Thread.run[m  [32m                Thread.java:  748[m
+
+2020-May-20 23:20:24 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:20:24 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:28:34 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:28:40 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:28:40 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:28:47 +0200 UnknownHost ERROR [musiclj.middleware] - 
+[1;31mjava.lang.IllegalArgumentException[m: [3mDon't know how to create ISeq from: musiclj.models.album_model$get_artists[m
+                                                                  [37mclojure.lang.RT.seqFrom[m  [32m                    RT.java:  505[m
+                                                                      [37mclojure.lang.RT.seq[m  [32m                    RT.java:  486[m
+                                                                     [37mclojure.lang.RT.vals[m  [32m                    RT.java:  518[m
+                                                                        [33mclojure.core/[1;33mvals[m  [32m                   core.clj: 1488[m
+                                                [33mmusiclj.routes.albums/[1;33mrecently-added-page[m  [32m                 albums.clj:   20[m
+                                                              [33mmusiclj.routes.albums/fn/[1;33mfn[m  [32m                 albums.clj:   60[m
+                                                       [33mnoir.util.route/wrap-restricted/[1;33mfn[m  [32m                  route.clj:   39[m
+                                                           [33mcompojure.response/eval1649/[1;33mfn[m  [32m               response.clj:   32[m
+                                                         [33mcompojure.response/eval1610/fn/[1;33mG[m  [32m               response.clj:    9[m
+                                                             [33mcompojure.core/make-route/[1;33mfn[m  [32m                   core.clj:  100[m
+                                                               [33mcompojure.core/if-route/[1;33mfn[m  [32m                   core.clj:   46[m
+                                                              [33mcompojure.core/if-method/[1;33mfn[m  [32m                   core.clj:   31[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                               [33mnoir-exception.core/wrap-internal-error/[1;33mfn[m  [32m                   core.clj:  121[m
+                                                 [33mnoir.util.middleware/wrap-request-map/[1;33mfn[m  [32m             middleware.clj:   39[m
+                                    [33mring.middleware.keyword-params/wrap-keyword-params/[1;33mfn[m  [32m         keyword_params.clj:   35[m
+                                      [33mring.middleware.nested-params/wrap-nested-params/[1;33mfn[m  [32m          nested_params.clj:   84[m
+                                [33mring.middleware.multipart-params/wrap-multipart-params/[1;33mfn[m  [32m       multipart_params.clj:  118[m
+                                                    [33mring.middleware.params/wrap-params/[1;33mfn[m  [32m                 params.clj:   64[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                            [33mring.middleware.absolute-redirects/wrap-absolute-redirects/[1;33mfn[m  [32m     absolute_redirects.clj:   36[m
+                                                [33mring.middleware.resource/wrap-resource/[1;33mfn[m  [32m               resource.clj:   26[m
+                                        [33mring.middleware.content-type/wrap-content-type/[1;33mfn[m  [32m           content_type.clj:   30[m
+                                        [33mring.middleware.not-modified/wrap-not-modified/[1;33mfn[m  [32m           not_modified.clj:   44[m
+                                         [33mring.middleware.x-headers/wrap-xss-protection/[1;33mfn[m  [32m              x_headers.clj:   71[m
+                                          [33mring.middleware.x-headers/wrap-frame-options/[1;33mfn[m  [32m              x_headers.clj:   38[m
+                                   [33mring.middleware.x-headers/wrap-content-type-options/[1;33mfn[m  [32m              x_headers.clj:   53[m
+                                                       [33mhiccup.middleware/wrap-base-url/[1;33mfn[m  [32m             middleware.clj:   12[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                  [33mring.middleware.format-response/wrap-format-response/[1;33mfn[m  [32m        format_response.clj:  174[m
+                                                [33mnoir.util.middleware/wrap-access-rules/[1;33mfn[m  [32m             middleware.clj:  134[m
+                                                  [33mnoir.validation/wrap-noir-validation/[1;33mfn[m  [32m             validation.clj:  155[m
+                                                             [33mnoir.cookies/noir-cookies/[1;33mfn[m  [32m                cookies.clj:   72[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                                                               [33mnoir.session/noir-flash/[1;33mfn[m  [32m                session.clj:  158[m
+                                                      [33mring.middleware.flash/wrap-flash/[1;33mfn[m  [32m                  flash.clj:   35[m
+                                                             [33mnoir.session/noir-session/[1;33mfn[m  [32m                session.clj:  109[m
+                             [33mring.middleware.session-timeout/wrap-idle-session-timeout/[1;33mfn[m  [32m        session_timeout.clj:   25[m
+                                                  [33mring.middleware.session/wrap-session/[1;33mfn[m  [32m                session.clj:   98[m
+                                                                  [37mclojure.lang.Var.invoke[m  [32m                   Var.java:  379[m
+                                                    [33mring.middleware.reload/wrap-reload/[1;33mfn[m  [32m                 reload.clj:   22[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-log/[1;33mfn[m  [32m             stacktrace.clj:   23[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-web/[1;33mfn[m  [32m             stacktrace.clj:   86[m
+                                                      [33mring.adapter.jetty/proxy-handler/[1;33mfn[m  [32m                  jetty.clj:   20[m
+[37mring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle[m  [32m                                 [m
+                                   [37morg.eclipse.jetty.server.handler.HandlerWrapper.handle[m  [32m        HandlerWrapper.java:  116[m
+                                                   [37morg.eclipse.jetty.server.Server.handle[m  [32m                Server.java:  369[m
+                            [37morg.eclipse.jetty.server.AbstractHttpConnection.handleRequest[m  [32mAbstractHttpConnection.java:  486[m
+                           [37morg.eclipse.jetty.server.AbstractHttpConnection.headerComplete[m  [32mAbstractHttpConnection.java:  933[m
+            [37morg.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete[m  [32mAbstractHttpConnection.java:  995[m
+                                              [37morg.eclipse.jetty.http.HttpParser.parseNext[m  [32m            HttpParser.java:  644[m
+                                         [37morg.eclipse.jetty.http.HttpParser.parseAvailable[m  [32m            HttpParser.java:  235[m
+                                      [37morg.eclipse.jetty.server.AsyncHttpConnection.handle[m  [32m   AsyncHttpConnection.java:   82[m
+                                    [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint.handle[m  [32m SelectChannelEndPoint.java:  668[m
+                                     [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run[m  [32m SelectChannelEndPoint.java:   52[m
+                                    [37morg.eclipse.jetty.util.thread.QueuedThreadPool.runJob[m  [32m      QueuedThreadPool.java:  608[m
+                                     [37morg.eclipse.jetty.util.thread.QueuedThreadPool$3.run[m  [32m      QueuedThreadPool.java:  543[m
+                                                                     [37mjava.lang.Thread.run[m  [32m                Thread.java:  748[m
+
+2020-May-20 23:30:58 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:31:03 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:31:18 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:31:23 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:31:23 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:31:29 +0200 UnknownHost ERROR [musiclj.middleware] - 
+[1;31mjava.lang.IllegalArgumentException[m: [3mDon't know how to create ISeq from: musiclj.models.album_model$get_artists[m
+                                                                  [37mclojure.lang.RT.seqFrom[m  [32m                    RT.java:  505[m
+                                                                      [37mclojure.lang.RT.seq[m  [32m                    RT.java:  486[m
+                                                                     [37mclojure.lang.RT.vals[m  [32m                    RT.java:  518[m
+                                                                        [33mclojure.core/[1;33mvals[m  [32m                   core.clj: 1488[m
+                                                [33mmusiclj.routes.albums/[1;33mrecently-added-page[m  [32m                 albums.clj:   20[m
+                                                              [33mmusiclj.routes.albums/fn/[1;33mfn[m  [32m                 albums.clj:   60[m
+                                                       [33mnoir.util.route/wrap-restricted/[1;33mfn[m  [32m                  route.clj:   39[m
+                                                           [33mcompojure.response/eval1649/[1;33mfn[m  [32m               response.clj:   32[m
+                                                         [33mcompojure.response/eval1610/fn/[1;33mG[m  [32m               response.clj:    9[m
+                                                             [33mcompojure.core/make-route/[1;33mfn[m  [32m                   core.clj:  100[m
+                                                               [33mcompojure.core/if-route/[1;33mfn[m  [32m                   core.clj:   46[m
+                                                              [33mcompojure.core/if-method/[1;33mfn[m  [32m                   core.clj:   31[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                               [33mnoir-exception.core/wrap-internal-error/[1;33mfn[m  [32m                   core.clj:  121[m
+                                                 [33mnoir.util.middleware/wrap-request-map/[1;33mfn[m  [32m             middleware.clj:   39[m
+                                    [33mring.middleware.keyword-params/wrap-keyword-params/[1;33mfn[m  [32m         keyword_params.clj:   35[m
+                                      [33mring.middleware.nested-params/wrap-nested-params/[1;33mfn[m  [32m          nested_params.clj:   84[m
+                                [33mring.middleware.multipart-params/wrap-multipart-params/[1;33mfn[m  [32m       multipart_params.clj:  118[m
+                                                    [33mring.middleware.params/wrap-params/[1;33mfn[m  [32m                 params.clj:   64[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                            [33mring.middleware.absolute-redirects/wrap-absolute-redirects/[1;33mfn[m  [32m     absolute_redirects.clj:   36[m
+                                                [33mring.middleware.resource/wrap-resource/[1;33mfn[m  [32m               resource.clj:   26[m
+                                        [33mring.middleware.content-type/wrap-content-type/[1;33mfn[m  [32m           content_type.clj:   30[m
+                                        [33mring.middleware.not-modified/wrap-not-modified/[1;33mfn[m  [32m           not_modified.clj:   44[m
+                                         [33mring.middleware.x-headers/wrap-xss-protection/[1;33mfn[m  [32m              x_headers.clj:   71[m
+                                          [33mring.middleware.x-headers/wrap-frame-options/[1;33mfn[m  [32m              x_headers.clj:   38[m
+                                   [33mring.middleware.x-headers/wrap-content-type-options/[1;33mfn[m  [32m              x_headers.clj:   53[m
+                                                       [33mhiccup.middleware/wrap-base-url/[1;33mfn[m  [32m             middleware.clj:   12[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                  [33mring.middleware.format-response/wrap-format-response/[1;33mfn[m  [32m        format_response.clj:  174[m
+                                                [33mnoir.util.middleware/wrap-access-rules/[1;33mfn[m  [32m             middleware.clj:  134[m
+                                                  [33mnoir.validation/wrap-noir-validation/[1;33mfn[m  [32m             validation.clj:  155[m
+                                                             [33mnoir.cookies/noir-cookies/[1;33mfn[m  [32m                cookies.clj:   72[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                                                               [33mnoir.session/noir-flash/[1;33mfn[m  [32m                session.clj:  158[m
+                                                      [33mring.middleware.flash/wrap-flash/[1;33mfn[m  [32m                  flash.clj:   35[m
+                                                             [33mnoir.session/noir-session/[1;33mfn[m  [32m                session.clj:  109[m
+                             [33mring.middleware.session-timeout/wrap-idle-session-timeout/[1;33mfn[m  [32m        session_timeout.clj:   25[m
+                                                  [33mring.middleware.session/wrap-session/[1;33mfn[m  [32m                session.clj:   98[m
+                                                                  [37mclojure.lang.Var.invoke[m  [32m                   Var.java:  379[m
+                                                    [33mring.middleware.reload/wrap-reload/[1;33mfn[m  [32m                 reload.clj:   22[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-log/[1;33mfn[m  [32m             stacktrace.clj:   23[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-web/[1;33mfn[m  [32m             stacktrace.clj:   86[m
+                                                      [33mring.adapter.jetty/proxy-handler/[1;33mfn[m  [32m                  jetty.clj:   20[m
+[37mring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle[m  [32m                                 [m
+                                   [37morg.eclipse.jetty.server.handler.HandlerWrapper.handle[m  [32m        HandlerWrapper.java:  116[m
+                                                   [37morg.eclipse.jetty.server.Server.handle[m  [32m                Server.java:  369[m
+                            [37morg.eclipse.jetty.server.AbstractHttpConnection.handleRequest[m  [32mAbstractHttpConnection.java:  486[m
+                           [37morg.eclipse.jetty.server.AbstractHttpConnection.headerComplete[m  [32mAbstractHttpConnection.java:  933[m
+            [37morg.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete[m  [32mAbstractHttpConnection.java:  995[m
+                                              [37morg.eclipse.jetty.http.HttpParser.parseNext[m  [32m            HttpParser.java:  644[m
+                                         [37morg.eclipse.jetty.http.HttpParser.parseAvailable[m  [32m            HttpParser.java:  235[m
+                                      [37morg.eclipse.jetty.server.AsyncHttpConnection.handle[m  [32m   AsyncHttpConnection.java:   82[m
+                                    [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint.handle[m  [32m SelectChannelEndPoint.java:  668[m
+                                     [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run[m  [32m SelectChannelEndPoint.java:   52[m
+                                    [37morg.eclipse.jetty.util.thread.QueuedThreadPool.runJob[m  [32m      QueuedThreadPool.java:  608[m
+                                     [37morg.eclipse.jetty.util.thread.QueuedThreadPool$3.run[m  [32m      QueuedThreadPool.java:  543[m
+                                                                     [37mjava.lang.Thread.run[m  [32m                Thread.java:  748[m
+
+2020-May-20 23:31:33 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:31:33 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:32:02 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:32:07 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:32:07 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:32:12 +0200 UnknownHost ERROR [musiclj.middleware] - 
+[1;31mjava.lang.Exception[m: [3mOn filter body 'artists|join:", "' and filter 'join:", "' this error occurred:clojure.lang.PersistentArrayMap cannot be cast to java.util.Map$Entry[m
+                                           [33mselmer.filter-parser/compile-filter-body/fn/[1;33mfn[m  [32m          filter_parser.clj:  121[m
+                                                                [33mclojure.core.protocols/[1;33mfn[m  [32m              protocols.clj:  143[m
+                                                              [33mclojure.core.protocols/fn/[1;33mG[m  [32m              protocols.clj:   19[m
+                                                        [33mclojure.core.protocols/[1;33mseq-reduce[m  [32m              protocols.clj:   31[m
+                                                                [33mclojure.core.protocols/[1;33mfn[m  [32m              protocols.clj:   54[m
+                                                              [33mclojure.core.protocols/fn/[1;33mG[m  [32m              protocols.clj:   13[m
+                                                                      [33mclojure.core/[1;33mreduce[m  [32m                   core.clj: 6289[m
+                                              [33mselmer.filter-parser/compile-filter-body/[1;33mfn[m  [32m          filter_parser.clj:  123[m
+                                                     [33mselmer.node.FunctionNode/[1;33mrender-node[m  [32m                   node.clj:   19[m
+                                                            [33mselmer.parser/[1;33mrender-template[m  [32m                 parser.clj:   93[m
+                                                              [33mselmer.tags/with-handler/[1;33mfn[m  [32m                   tags.clj:  211[m
+                                                     [33mselmer.node.FunctionNode/[1;33mrender-node[m  [32m                   node.clj:   19[m
+                                                            [33mselmer.parser/[1;33mrender-template[m  [32m                 parser.clj:   93[m
+                                                             [33mselmer.tags/block-handler/[1;33mfn[m  [32m                   tags.clj:  166[m
+                                                     [33mselmer.node.FunctionNode/[1;33mrender-node[m  [32m                   node.clj:   19[m
+                                                            [33mselmer.parser/[1;33mrender-template[m  [32m                 parser.clj:   93[m
+                                                                [33mselmer.parser/[1;33mrender-file[m  [32m                 parser.clj:  125[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  425[m
+                                                 [33mmusiclj.layout.RenderableTemplate/[1;33mrender[m  [32m                 layout.clj:   24[m
+                                                           [33mcompojure.response/eval1649/[1;33mfn[m  [32m               response.clj:   32[m
+                                                         [33mcompojure.response/eval1610/fn/[1;33mG[m  [32m               response.clj:    9[m
+                                                             [33mcompojure.core/make-route/[1;33mfn[m  [32m                   core.clj:  100[m
+                                                               [33mcompojure.core/if-route/[1;33mfn[m  [32m                   core.clj:   46[m
+                                                              [33mcompojure.core/if-method/[1;33mfn[m  [32m                   core.clj:   31[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                               [33mnoir-exception.core/wrap-internal-error/[1;33mfn[m  [32m                   core.clj:  121[m
+                                                 [33mnoir.util.middleware/wrap-request-map/[1;33mfn[m  [32m             middleware.clj:   39[m
+                                    [33mring.middleware.keyword-params/wrap-keyword-params/[1;33mfn[m  [32m         keyword_params.clj:   35[m
+                                      [33mring.middleware.nested-params/wrap-nested-params/[1;33mfn[m  [32m          nested_params.clj:   84[m
+                                [33mring.middleware.multipart-params/wrap-multipart-params/[1;33mfn[m  [32m       multipart_params.clj:  118[m
+                                                    [33mring.middleware.params/wrap-params/[1;33mfn[m  [32m                 params.clj:   64[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                            [33mring.middleware.absolute-redirects/wrap-absolute-redirects/[1;33mfn[m  [32m     absolute_redirects.clj:   36[m
+                                                [33mring.middleware.resource/wrap-resource/[1;33mfn[m  [32m               resource.clj:   26[m
+                                        [33mring.middleware.content-type/wrap-content-type/[1;33mfn[m  [32m           content_type.clj:   30[m
+                                        [33mring.middleware.not-modified/wrap-not-modified/[1;33mfn[m  [32m           not_modified.clj:   44[m
+                                         [33mring.middleware.x-headers/wrap-xss-protection/[1;33mfn[m  [32m              x_headers.clj:   71[m
+                                          [33mring.middleware.x-headers/wrap-frame-options/[1;33mfn[m  [32m              x_headers.clj:   38[m
+                                   [33mring.middleware.x-headers/wrap-content-type-options/[1;33mfn[m  [32m              x_headers.clj:   53[m
+                                                       [33mhiccup.middleware/wrap-base-url/[1;33mfn[m  [32m             middleware.clj:   12[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                  [33mring.middleware.format-response/wrap-format-response/[1;33mfn[m  [32m        format_response.clj:  174[m
+                                                [33mnoir.util.middleware/wrap-access-rules/[1;33mfn[m  [32m             middleware.clj:  134[m
+                                                  [33mnoir.validation/wrap-noir-validation/[1;33mfn[m  [32m             validation.clj:  155[m
+                                                             [33mnoir.cookies/noir-cookies/[1;33mfn[m  [32m                cookies.clj:   72[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                                                               [33mnoir.session/noir-flash/[1;33mfn[m  [32m                session.clj:  158[m
+                                                      [33mring.middleware.flash/wrap-flash/[1;33mfn[m  [32m                  flash.clj:   35[m
+                                                             [33mnoir.session/noir-session/[1;33mfn[m  [32m                session.clj:  109[m
+                             [33mring.middleware.session-timeout/wrap-idle-session-timeout/[1;33mfn[m  [32m        session_timeout.clj:   25[m
+                                                  [33mring.middleware.session/wrap-session/[1;33mfn[m  [32m                session.clj:   98[m
+                                                                  [37mclojure.lang.Var.invoke[m  [32m                   Var.java:  379[m
+                                                    [33mring.middleware.reload/wrap-reload/[1;33mfn[m  [32m                 reload.clj:   22[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-log/[1;33mfn[m  [32m             stacktrace.clj:   23[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-web/[1;33mfn[m  [32m             stacktrace.clj:   86[m
+                                                      [33mring.adapter.jetty/proxy-handler/[1;33mfn[m  [32m                  jetty.clj:   20[m
+[37mring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle[m  [32m                                 [m
+                                   [37morg.eclipse.jetty.server.handler.HandlerWrapper.handle[m  [32m        HandlerWrapper.java:  116[m
+                                                   [37morg.eclipse.jetty.server.Server.handle[m  [32m                Server.java:  369[m
+                            [37morg.eclipse.jetty.server.AbstractHttpConnection.handleRequest[m  [32mAbstractHttpConnection.java:  486[m
+                           [37morg.eclipse.jetty.server.AbstractHttpConnection.headerComplete[m  [32mAbstractHttpConnection.java:  933[m
+            [37morg.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete[m  [32mAbstractHttpConnection.java:  995[m
+                                              [37morg.eclipse.jetty.http.HttpParser.parseNext[m  [32m            HttpParser.java:  644[m
+                                         [37morg.eclipse.jetty.http.HttpParser.parseAvailable[m  [32m            HttpParser.java:  235[m
+                                      [37morg.eclipse.jetty.server.AsyncHttpConnection.handle[m  [32m   AsyncHttpConnection.java:   82[m
+                                    [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint.handle[m  [32m SelectChannelEndPoint.java:  668[m
+                                     [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run[m  [32m SelectChannelEndPoint.java:   52[m
+                                    [37morg.eclipse.jetty.util.thread.QueuedThreadPool.runJob[m  [32m      QueuedThreadPool.java:  608[m
+                                     [37morg.eclipse.jetty.util.thread.QueuedThreadPool$3.run[m  [32m      QueuedThreadPool.java:  543[m
+                                                                     [37mjava.lang.Thread.run[m  [32m                Thread.java:  748[m
+
+2020-May-20 23:32:16 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:32:16 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:35:30 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:35:35 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:35:35 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:36:58 +0200 UnknownHost ERROR [musiclj.middleware] - 
+[1;31mjava.lang.ClassCastException[m: [3mclojure.lang.PersistentArrayMap cannot be cast to java.util.Map$Entry[m
+                                                 [37mclojure.lang.APersistentMap$ValSeq.first[m  [32m        APersistentMap.java:  185[m
+                                                                  [37mclojure.lang.RT.nthFrom[m  [32m                    RT.java:  852[m
+                                                                      [37mclojure.lang.RT.nth[m  [32m                    RT.java:  807[m
+                                                            [33mclojure.core/[1;33mprint-sequential[m  [32m             core_print.clj:   57[m
+                                                                          [33mclojure.core/[1;33mfn[m  [32m             core_print.clj:  147[m
+                                                              [37mclojure.lang.MultiFn.invoke[m  [32m               MultiFn.java:  231[m
+                                                                       [33mclojure.core/[1;33mpr-on[m  [32m                   core.clj: 3392[m
+                                                                  [37mclojure.lang.Var.invoke[m  [32m                   Var.java:  383[m
+                                                                    [37mclojure.lang.RT.print[m  [32m                    RT.java: 1743[m
+                                                              [37mclojure.lang.RT.printString[m  [32m                    RT.java: 1727[m
+                                                               [37mclojure.lang.ASeq.toString[m  [32m                  ASeq.java:   21[m
+                                                                         [33mclojure.core/[1;33mstr[m  [32m                   core.clj:  520[m
+                                                                      [33mclojure.core/str/[1;33mfn[m  [32m                   core.clj:  524[m
+                                                                         [33mclojure.core/[1;33mstr[m  [32m                   core.clj:  526[m
+                                                               [37mclojure.lang.RestFn.invoke[m  [32m                RestFn.java:  423[m
+                                                [33mmusiclj.routes.albums/[1;33mrecently-added-page[m  [32m                 albums.clj:   19[m
+                                                              [33mmusiclj.routes.albums/fn/[1;33mfn[m  [32m                 albums.clj:   61[m
+                                                       [33mnoir.util.route/wrap-restricted/[1;33mfn[m  [32m                  route.clj:   39[m
+                                                           [33mcompojure.response/eval1649/[1;33mfn[m  [32m               response.clj:   32[m
+                                                         [33mcompojure.response/eval1610/fn/[1;33mG[m  [32m               response.clj:    9[m
+                                                             [33mcompojure.core/make-route/[1;33mfn[m  [32m                   core.clj:  100[m
+                                                               [33mcompojure.core/if-route/[1;33mfn[m  [32m                   core.clj:   46[m
+                                                              [33mcompojure.core/if-method/[1;33mfn[m  [32m                   core.clj:   31[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                               [33mnoir-exception.core/wrap-internal-error/[1;33mfn[m  [32m                   core.clj:  121[m
+                                                 [33mnoir.util.middleware/wrap-request-map/[1;33mfn[m  [32m             middleware.clj:   39[m
+                                    [33mring.middleware.keyword-params/wrap-keyword-params/[1;33mfn[m  [32m         keyword_params.clj:   35[m
+                                      [33mring.middleware.nested-params/wrap-nested-params/[1;33mfn[m  [32m          nested_params.clj:   84[m
+                                [33mring.middleware.multipart-params/wrap-multipart-params/[1;33mfn[m  [32m       multipart_params.clj:  118[m
+                                                    [33mring.middleware.params/wrap-params/[1;33mfn[m  [32m                 params.clj:   64[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                            [33mring.middleware.absolute-redirects/wrap-absolute-redirects/[1;33mfn[m  [32m     absolute_redirects.clj:   36[m
+                                                [33mring.middleware.resource/wrap-resource/[1;33mfn[m  [32m               resource.clj:   26[m
+                                        [33mring.middleware.content-type/wrap-content-type/[1;33mfn[m  [32m           content_type.clj:   30[m
+                                        [33mring.middleware.not-modified/wrap-not-modified/[1;33mfn[m  [32m           not_modified.clj:   44[m
+                                         [33mring.middleware.x-headers/wrap-xss-protection/[1;33mfn[m  [32m              x_headers.clj:   71[m
+                                          [33mring.middleware.x-headers/wrap-frame-options/[1;33mfn[m  [32m              x_headers.clj:   38[m
+                                   [33mring.middleware.x-headers/wrap-content-type-options/[1;33mfn[m  [32m              x_headers.clj:   53[m
+                                                       [33mhiccup.middleware/wrap-base-url/[1;33mfn[m  [32m             middleware.clj:   12[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                  [33mring.middleware.format-response/wrap-format-response/[1;33mfn[m  [32m        format_response.clj:  174[m
+                                                [33mnoir.util.middleware/wrap-access-rules/[1;33mfn[m  [32m             middleware.clj:  134[m
+                                                  [33mnoir.validation/wrap-noir-validation/[1;33mfn[m  [32m             validation.clj:  155[m
+                                                             [33mnoir.cookies/noir-cookies/[1;33mfn[m  [32m                cookies.clj:   72[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                                                               [33mnoir.session/noir-flash/[1;33mfn[m  [32m                session.clj:  158[m
+                                                      [33mring.middleware.flash/wrap-flash/[1;33mfn[m  [32m                  flash.clj:   35[m
+                                                             [33mnoir.session/noir-session/[1;33mfn[m  [32m                session.clj:  109[m
+                             [33mring.middleware.session-timeout/wrap-idle-session-timeout/[1;33mfn[m  [32m        session_timeout.clj:   25[m
+                                                  [33mring.middleware.session/wrap-session/[1;33mfn[m  [32m                session.clj:   98[m
+                                                                  [37mclojure.lang.Var.invoke[m  [32m                   Var.java:  379[m
+                                                    [33mring.middleware.reload/wrap-reload/[1;33mfn[m  [32m                 reload.clj:   22[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-log/[1;33mfn[m  [32m             stacktrace.clj:   23[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-web/[1;33mfn[m  [32m             stacktrace.clj:   86[m
+                                                      [33mring.adapter.jetty/proxy-handler/[1;33mfn[m  [32m                  jetty.clj:   20[m
+[37mring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle[m  [32m                                 [m
+                                   [37morg.eclipse.jetty.server.handler.HandlerWrapper.handle[m  [32m        HandlerWrapper.java:  116[m
+                                                   [37morg.eclipse.jetty.server.Server.handle[m  [32m                Server.java:  369[m
+                            [37morg.eclipse.jetty.server.AbstractHttpConnection.handleRequest[m  [32mAbstractHttpConnection.java:  486[m
+                           [37morg.eclipse.jetty.server.AbstractHttpConnection.headerComplete[m  [32mAbstractHttpConnection.java:  933[m
+            [37morg.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete[m  [32mAbstractHttpConnection.java:  995[m
+                                              [37morg.eclipse.jetty.http.HttpParser.parseNext[m  [32m            HttpParser.java:  644[m
+                                         [37morg.eclipse.jetty.http.HttpParser.parseAvailable[m  [32m            HttpParser.java:  235[m
+                                      [37morg.eclipse.jetty.server.AsyncHttpConnection.handle[m  [32m   AsyncHttpConnection.java:   82[m
+                                    [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint.handle[m  [32m SelectChannelEndPoint.java:  668[m
+                                     [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run[m  [32m SelectChannelEndPoint.java:   52[m
+                                    [37morg.eclipse.jetty.util.thread.QueuedThreadPool.runJob[m  [32m      QueuedThreadPool.java:  608[m
+                                     [37morg.eclipse.jetty.util.thread.QueuedThreadPool$3.run[m  [32m      QueuedThreadPool.java:  543[m
+                                                                     [37mjava.lang.Thread.run[m  [32m                Thread.java:  748[m
+
+2020-May-20 23:40:15 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:40:20 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:40:29 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:40:34 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:40:34 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:41:02 +0200 UnknownHost ERROR [musiclj.middleware] - 
+[1;31mjava.lang.ClassCastException[m: [3m[m
+
+2020-May-20 23:41:05 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:41:05 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:41:40 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:41:45 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:41:45 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:42:18 +0200 UnknownHost ERROR [musiclj.middleware] - 
+[1;31mjava.lang.IllegalArgumentException[m: [3mDon't know how to create ISeq from: musiclj.models.album_model$get_artists[m
+                                                                  [37mclojure.lang.RT.seqFrom[m  [32m                    RT.java:  505[m
+                                                                      [37mclojure.lang.RT.seq[m  [32m                    RT.java:  486[m
+                                                                     [37mclojure.lang.RT.vals[m  [32m                    RT.java:  518[m
+                                                                        [33mclojure.core/[1;33mvals[m  [32m                   core.clj: 1488[m
+                                                [33mmusiclj.routes.albums/[1;33mrecently-added-page[m  [32m                 albums.clj:   19[m
+                                                              [33mmusiclj.routes.albums/fn/[1;33mfn[m  [32m                 albums.clj:   61[m
+                                                       [33mnoir.util.route/wrap-restricted/[1;33mfn[m  [32m                  route.clj:   39[m
+                                                           [33mcompojure.response/eval1649/[1;33mfn[m  [32m               response.clj:   32[m
+                                                         [33mcompojure.response/eval1610/fn/[1;33mG[m  [32m               response.clj:    9[m
+                                                             [33mcompojure.core/make-route/[1;33mfn[m  [32m                   core.clj:  100[m
+                                                               [33mcompojure.core/if-route/[1;33mfn[m  [32m                   core.clj:   46[m
+                                                              [33mcompojure.core/if-method/[1;33mfn[m  [32m                   core.clj:   31[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                               [33mnoir-exception.core/wrap-internal-error/[1;33mfn[m  [32m                   core.clj:  121[m
+                                                 [33mnoir.util.middleware/wrap-request-map/[1;33mfn[m  [32m             middleware.clj:   39[m
+                                    [33mring.middleware.keyword-params/wrap-keyword-params/[1;33mfn[m  [32m         keyword_params.clj:   35[m
+                                      [33mring.middleware.nested-params/wrap-nested-params/[1;33mfn[m  [32m          nested_params.clj:   84[m
+                                [33mring.middleware.multipart-params/wrap-multipart-params/[1;33mfn[m  [32m       multipart_params.clj:  118[m
+                                                    [33mring.middleware.params/wrap-params/[1;33mfn[m  [32m                 params.clj:   64[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                            [33mring.middleware.absolute-redirects/wrap-absolute-redirects/[1;33mfn[m  [32m     absolute_redirects.clj:   36[m
+                                                [33mring.middleware.resource/wrap-resource/[1;33mfn[m  [32m               resource.clj:   26[m
+                                        [33mring.middleware.content-type/wrap-content-type/[1;33mfn[m  [32m           content_type.clj:   30[m
+                                        [33mring.middleware.not-modified/wrap-not-modified/[1;33mfn[m  [32m           not_modified.clj:   44[m
+                                         [33mring.middleware.x-headers/wrap-xss-protection/[1;33mfn[m  [32m              x_headers.clj:   71[m
+                                          [33mring.middleware.x-headers/wrap-frame-options/[1;33mfn[m  [32m              x_headers.clj:   38[m
+                                   [33mring.middleware.x-headers/wrap-content-type-options/[1;33mfn[m  [32m              x_headers.clj:   53[m
+                                                       [33mhiccup.middleware/wrap-base-url/[1;33mfn[m  [32m             middleware.clj:   12[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                  [33mring.middleware.format-response/wrap-format-response/[1;33mfn[m  [32m        format_response.clj:  174[m
+                                                [33mnoir.util.middleware/wrap-access-rules/[1;33mfn[m  [32m             middleware.clj:  134[m
+                                                  [33mnoir.validation/wrap-noir-validation/[1;33mfn[m  [32m             validation.clj:  155[m
+                                                             [33mnoir.cookies/noir-cookies/[1;33mfn[m  [32m                cookies.clj:   72[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                                                               [33mnoir.session/noir-flash/[1;33mfn[m  [32m                session.clj:  158[m
+                                                      [33mring.middleware.flash/wrap-flash/[1;33mfn[m  [32m                  flash.clj:   35[m
+                                                             [33mnoir.session/noir-session/[1;33mfn[m  [32m                session.clj:  109[m
+                             [33mring.middleware.session-timeout/wrap-idle-session-timeout/[1;33mfn[m  [32m        session_timeout.clj:   25[m
+                                                  [33mring.middleware.session/wrap-session/[1;33mfn[m  [32m                session.clj:   98[m
+                                                                  [37mclojure.lang.Var.invoke[m  [32m                   Var.java:  379[m
+                                                    [33mring.middleware.reload/wrap-reload/[1;33mfn[m  [32m                 reload.clj:   22[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-log/[1;33mfn[m  [32m             stacktrace.clj:   23[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-web/[1;33mfn[m  [32m             stacktrace.clj:   86[m
+                                                      [33mring.adapter.jetty/proxy-handler/[1;33mfn[m  [32m                  jetty.clj:   20[m
+[37mring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle[m  [32m                                 [m
+                                   [37morg.eclipse.jetty.server.handler.HandlerWrapper.handle[m  [32m        HandlerWrapper.java:  116[m
+                                                   [37morg.eclipse.jetty.server.Server.handle[m  [32m                Server.java:  369[m
+                            [37morg.eclipse.jetty.server.AbstractHttpConnection.handleRequest[m  [32mAbstractHttpConnection.java:  486[m
+                           [37morg.eclipse.jetty.server.AbstractHttpConnection.headerComplete[m  [32mAbstractHttpConnection.java:  933[m
+            [37morg.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete[m  [32mAbstractHttpConnection.java:  995[m
+                                              [37morg.eclipse.jetty.http.HttpParser.parseNext[m  [32m            HttpParser.java:  644[m
+                                         [37morg.eclipse.jetty.http.HttpParser.parseAvailable[m  [32m            HttpParser.java:  235[m
+                                      [37morg.eclipse.jetty.server.AsyncHttpConnection.handle[m  [32m   AsyncHttpConnection.java:   82[m
+                                    [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint.handle[m  [32m SelectChannelEndPoint.java:  668[m
+                                     [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run[m  [32m SelectChannelEndPoint.java:   52[m
+                                    [37morg.eclipse.jetty.util.thread.QueuedThreadPool.runJob[m  [32m      QueuedThreadPool.java:  608[m
+                                     [37morg.eclipse.jetty.util.thread.QueuedThreadPool$3.run[m  [32m      QueuedThreadPool.java:  543[m
+                                                                     [37mjava.lang.Thread.run[m  [32m                Thread.java:  748[m
+
+2020-May-20 23:42:25 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:42:25 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:43:10 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:43:15 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:43:15 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:44:27 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:44:32 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:44:38 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:44:44 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:44:44 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:45:22 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:45:22 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:45:35 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:45:40 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:45:40 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:46:19 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:46:19 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!
+2020-May-20 23:53:16 +0200 UnknownHost INFO [musiclj.handler] - checking migrations
+2020-May-20 23:53:22 +0200 UnknownHost INFO [musiclj.handler] - finished migrations
+2020-May-20 23:53:22 +0200 UnknownHost INFO [musiclj.handler] - 
+-=[ hipstr started successfully nil ]=-
+2020-May-20 23:53:28 +0200 UnknownHost ERROR [musiclj.middleware] - 
+[1;31mjava.lang.IllegalArgumentException[m: [3mDon't know how to create ISeq from: musiclj.models.album_model$get_artists[m
+                                                                  [37mclojure.lang.RT.seqFrom[m  [32m                    RT.java:  505[m
+                                                                      [37mclojure.lang.RT.seq[m  [32m                    RT.java:  486[m
+                                                                         [33mclojure.core/[1;33mseq[m  [32m                   core.clj:  133[m
+                                                                       [33mclojure.core/[1;33mdorun[m  [32m                   core.clj: 2855[m
+                                                                       [33mclojure.core/[1;33mdoall[m  [32m                   core.clj: 2871[m
+                                                [33mmusiclj.routes.albums/[1;33mrecently-added-page[m  [32m                 albums.clj:   19[m
+                                                              [33mmusiclj.routes.albums/fn/[1;33mfn[m  [32m                 albums.clj:   61[m
+                                                       [33mnoir.util.route/wrap-restricted/[1;33mfn[m  [32m                  route.clj:   39[m
+                                                           [33mcompojure.response/eval1649/[1;33mfn[m  [32m               response.clj:   32[m
+                                                         [33mcompojure.response/eval1610/fn/[1;33mG[m  [32m               response.clj:    9[m
+                                                             [33mcompojure.core/make-route/[1;33mfn[m  [32m                   core.clj:  100[m
+                                                               [33mcompojure.core/if-route/[1;33mfn[m  [32m                   core.clj:   46[m
+                                                              [33mcompojure.core/if-method/[1;33mfn[m  [32m                   core.clj:   31[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                                                [33mcompojure.core/routing/[1;33mfn[m  [32m                   core.clj:  113[m
+                                                                        [33mclojure.core/[1;33msome[m  [32m                   core.clj: 2515[m
+                                                                   [33mcompojure.core/[1;33mrouting[m  [32m                   core.clj:  113[m
+                                                              [37mclojure.lang.RestFn.applyTo[m  [32m                RestFn.java:  139[m
+                                                                       [33mclojure.core/[1;33mapply[m  [32m                   core.clj:  626[m
+                                                                 [33mcompojure.core/routes/[1;33mfn[m  [32m                   core.clj:  118[m
+                                               [33mnoir-exception.core/wrap-internal-error/[1;33mfn[m  [32m                   core.clj:  121[m
+                                                 [33mnoir.util.middleware/wrap-request-map/[1;33mfn[m  [32m             middleware.clj:   39[m
+                                    [33mring.middleware.keyword-params/wrap-keyword-params/[1;33mfn[m  [32m         keyword_params.clj:   35[m
+                                      [33mring.middleware.nested-params/wrap-nested-params/[1;33mfn[m  [32m          nested_params.clj:   84[m
+                                [33mring.middleware.multipart-params/wrap-multipart-params/[1;33mfn[m  [32m       multipart_params.clj:  118[m
+                                                    [33mring.middleware.params/wrap-params/[1;33mfn[m  [32m                 params.clj:   64[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                            [33mring.middleware.absolute-redirects/wrap-absolute-redirects/[1;33mfn[m  [32m     absolute_redirects.clj:   36[m
+                                                [33mring.middleware.resource/wrap-resource/[1;33mfn[m  [32m               resource.clj:   26[m
+                                        [33mring.middleware.content-type/wrap-content-type/[1;33mfn[m  [32m           content_type.clj:   30[m
+                                        [33mring.middleware.not-modified/wrap-not-modified/[1;33mfn[m  [32m           not_modified.clj:   44[m
+                                         [33mring.middleware.x-headers/wrap-xss-protection/[1;33mfn[m  [32m              x_headers.clj:   71[m
+                                          [33mring.middleware.x-headers/wrap-frame-options/[1;33mfn[m  [32m              x_headers.clj:   38[m
+                                   [33mring.middleware.x-headers/wrap-content-type-options/[1;33mfn[m  [32m              x_headers.clj:   53[m
+                                                       [33mhiccup.middleware/wrap-base-url/[1;33mfn[m  [32m             middleware.clj:   12[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                      [33mring.middleware.format-params/wrap-format-params/[1;33mfn[m  [32m          format_params.clj:  113[m
+                                  [33mring.middleware.format-response/wrap-format-response/[1;33mfn[m  [32m        format_response.clj:  174[m
+                                                [33mnoir.util.middleware/wrap-access-rules/[1;33mfn[m  [32m             middleware.clj:  134[m
+                                                  [33mnoir.validation/wrap-noir-validation/[1;33mfn[m  [32m             validation.clj:  155[m
+                                                             [33mnoir.cookies/noir-cookies/[1;33mfn[m  [32m                cookies.clj:   72[m
+                                                  [33mring.middleware.cookies/wrap-cookies/[1;33mfn[m  [32m                cookies.clj:  156[m
+                                                               [33mnoir.session/noir-flash/[1;33mfn[m  [32m                session.clj:  158[m
+                                                      [33mring.middleware.flash/wrap-flash/[1;33mfn[m  [32m                  flash.clj:   35[m
+                                                             [33mnoir.session/noir-session/[1;33mfn[m  [32m                session.clj:  109[m
+                             [33mring.middleware.session-timeout/wrap-idle-session-timeout/[1;33mfn[m  [32m        session_timeout.clj:   25[m
+                                                  [33mring.middleware.session/wrap-session/[1;33mfn[m  [32m                session.clj:   98[m
+                                                                  [37mclojure.lang.Var.invoke[m  [32m                   Var.java:  379[m
+                                                    [33mring.middleware.reload/wrap-reload/[1;33mfn[m  [32m                 reload.clj:   22[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-log/[1;33mfn[m  [32m             stacktrace.clj:   23[m
+                                        [33mring.middleware.stacktrace/wrap-stacktrace-web/[1;33mfn[m  [32m             stacktrace.clj:   86[m
+                                                      [33mring.adapter.jetty/proxy-handler/[1;33mfn[m  [32m                  jetty.clj:   20[m
+[37mring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle[m  [32m                                 [m
+                                   [37morg.eclipse.jetty.server.handler.HandlerWrapper.handle[m  [32m        HandlerWrapper.java:  116[m
+                                                   [37morg.eclipse.jetty.server.Server.handle[m  [32m                Server.java:  369[m
+                            [37morg.eclipse.jetty.server.AbstractHttpConnection.handleRequest[m  [32mAbstractHttpConnection.java:  486[m
+                           [37morg.eclipse.jetty.server.AbstractHttpConnection.headerComplete[m  [32mAbstractHttpConnection.java:  933[m
+            [37morg.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete[m  [32mAbstractHttpConnection.java:  995[m
+                                              [37morg.eclipse.jetty.http.HttpParser.parseNext[m  [32m            HttpParser.java:  644[m
+                                         [37morg.eclipse.jetty.http.HttpParser.parseAvailable[m  [32m            HttpParser.java:  235[m
+                                      [37morg.eclipse.jetty.server.AsyncHttpConnection.handle[m  [32m   AsyncHttpConnection.java:   82[m
+                                    [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint.handle[m  [32m SelectChannelEndPoint.java:  668[m
+                                     [37morg.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run[m  [32m SelectChannelEndPoint.java:   52[m
+                                    [37morg.eclipse.jetty.util.thread.QueuedThreadPool.runJob[m  [32m      QueuedThreadPool.java:  608[m
+                                     [37morg.eclipse.jetty.util.thread.QueuedThreadPool$3.run[m  [32m      QueuedThreadPool.java:  543[m
+                                                                     [37mjava.lang.Thread.run[m  [32m                Thread.java:  748[m
+
+2020-May-20 23:53:34 +0200 UnknownHost INFO [musiclj.handler] - hipstr is shutting down...
+2020-May-20 23:53:34 +0200 UnknownHost INFO [musiclj.handler] - shutdown complete!

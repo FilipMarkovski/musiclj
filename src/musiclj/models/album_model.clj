@@ -98,6 +98,12 @@
           (k/limit 10))
   )
 
+(defn get-artists
+  "Gets all artists"
+  []
+  (k/select artists
+    (k/fields :name)))
+
 ; -- name: get-artist-albums
 ; -- Gets the discography for a given artist.
 ; SELECT alb.album_id, alb.name, alb.release_date
