@@ -104,6 +104,13 @@
   (k/select artists
     (k/fields :name)))
 
+
+(defn get-albums
+  "Gets all albums"
+  []
+  (k/select albums
+    (k/fields :name)))
+
 ; -- name: get-artist-albums
 ; -- Gets the discography for a given artist.
 ; SELECT alb.album_id, alb.name, alb.release_date
@@ -126,17 +133,6 @@
           (k/order :release_date :DESC)))
 
 
-; SELECT s.name, s.track_number, g.genre_name, s.youtube_link
-; FROM songs s
-; INNER JOIN genre_by_track AS gt
-;       ON gt.song_id = s.song_id
-; INNER JOIN genre AS g
-;       ON g.genre_id = gt.genre_id
-; INNER JOIN albums AS alb
-;       ON alb.album_id = s.album_id;
-;
-; easier query
-;
 ; SELECT s.name, s.track_number, s.youtube_link
 ; FROM songs s
 ; INNER JOIN albums AS alb
@@ -153,9 +149,19 @@
           ; for backwards compatibility we need to rename the :albums.name
           ; field to :album_name
           (k/with albums (k/fields [:albums.name :album_name]))
-          (k/where {:albums.name (:album album)})
+          (k/where {:albums.name (:album_name album)})
           (k/order :track_number :ASC))
 )
+
+(defn get-album-songs-with-fields
+  "Fetches the specific song from the database for a particular album."
+  ; for backwards compatibility it is expected that the
+  ; album param is {:artist_id :artist_name}
+  [song]
+  (first
+    (k/select songs
+              (k/where {:album_id (:album_id song)
+                        :name (:name song)}))))
 
 
 
@@ -181,6 +187,28 @@
     (k/insert albums (k/values album))))
 
 
+;-- name: insert-song<!
+;-- Adds the song for the given album to the database
+;
+; INSERT INTO songs (album_id, name, track_number, youtube_link)
+; VALUES (:album_id, :name, :track_number, :youtube_link)
+(defn insert-song<!
+  "Adds the song for the given album to the database."
+  ; for backwards compatibility it is expected that the
+  ; song param is a map,
+  ; {:album_id :youtube_link :track_number :song_name :album_name}
+  ; As such we'll have to rename the :song_name key and remove
+  ; the :album_name. This is because korma will attempt to use all
+  ; keys in the map when inserting, and :album_name will destroy
+  ; us with rabid vitriol.
+  [song]
+  (let [song (->
+               (clojure.set/rename-keys song {:song_name :name})
+               (dissoc :album_name))]
+    (k/insert songs (k/values song)))
+  )
+
+
 ; -- name: get-albums-by-name
 ; -- Fetches the specific album from the database for a particular
 ; -- artist.
@@ -189,7 +217,7 @@
 ; WHERE
 ;       artist_id = :artist_id and
 ;       name = :album_name
-(defn get-albums-by-name
+(defn get-albums-by-name-and-id
   "Fetches the specific album from the database for a particular artist."
   ; for backwards compatibility it is expected that the
   ; album param is {:artist_id :artist_name}
@@ -197,8 +225,45 @@
   (first
     (k/select albums
             (k/where {:artist_id (:artist_id album)
-                    :name (:artist_name album)}))))
+                      :name (:artist_name album)}))))
 
+
+(defn get-albums-by-artist-name
+  "Fetches the specific album from the database for a particular artist."
+  ; for backwards compatibility it is expected that the
+  ; album param is {:artist_name}
+  [album]
+  (first
+    (k/select albums
+              (k/where {:name (:artist_name album)}))))
+
+(defn get-albums-by-name
+  "Fetches the specific album from the database with the given name."
+  ; for backwards compatibility it is expected that the
+  ; album param is {:artist_name}
+  [album]
+  (first
+    (k/select albums
+              (k/where {:name (:album_name album)}))))
+
+(defn get-last-track-number
+  "Gets the last track number of an album"
+  [album]
+  (first
+    (k/select songs
+              (k/fields :songs.track_number)
+              (k/with albums (k/fields [:albums.name :album_name]))
+              (k/where {:albums.name (:name album)})
+              (k/order :track_number :DESC)))
+  )
+
+(defn inc-last-track-number
+  "Adds 1 to the track number"
+  [album]
+  (if (nil? (get-last-track-number album))
+    1
+    (inc (:track_number (get-last-track-number album))))
+  )
 
 ; -- name: insert-artist<!
 ; -- Inserts a new artist into the database. ; INSERT INTO artists(name)
@@ -251,5 +316,24 @@
           artist (or (get-artists-by-name artist-info)
                      (insert-artist<! artist-info))
           album-info (assoc album :artist_id (:artist_id artist))]
-      (or (get-albums-by-name album-info)
-          (insert-album<! album-info)))))
+      (or (get-albums-by-name-and-id album-info)
+          (insert-album<! album-info))
+    )
+  )
+)
+
+(defn add-song!
+  "Adds a new song to the database."
+  [song]
+  (db/transaction
+    (let [album-info {:album_name (:album_name song)}
+          ; fetch or insert the artist record
+          album (get-albums-by-name album-info)
+          track-number (inc-last-track-number album)
+          song-info (assoc song :album_id (:album_id album)
+                                :track_number track-number)]
+      (or (get-album-songs-with-fields song-info)
+          (insert-song<! song-info))
+      )
+    )
+  )

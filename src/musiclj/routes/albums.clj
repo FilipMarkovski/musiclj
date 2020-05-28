@@ -11,15 +11,13 @@
 (defn render-recently-added-html
   "Simply renders the recently added page with the given context."
   [ctx]
-  (layout/render "albums/recently-added.html" ctx)
-  )
+  (layout/render "albums/recently-added.html" ctx))
 
 (defn recently-added-page
   "Renders out the recently-added page."
   []
   (render-recently-added-html {:albums (album/get-recently-added)
-                               :artists (map :name (album/get-artists))
-                               }))
+                               :artists (map :name (album/get-artists))}))
 
 (defn artist-page
   "Renders out the artist page."
@@ -28,13 +26,17 @@
     {:artist artist_name
      :albums (album/get-artist-albums {:artist artist_name})}))
 
+(defn render-album-page-html
+  "Simply renders the album page with the given context."
+  [ctx]
+  (layout/render "songs/album-tracks.html" ctx)
+)
+
 (defn album-page
   "Renders out the album track list page."
   [album_name]
-  (layout/render "songs/album_tracks.html"
-                 {:album album_name
-                  :songs (album/get-album-songs {:album album_name})})
-)
+  (render-album-page-html {:album album_name
+                           :songs (album/get-album-songs {:album_name album_name})}))
 
 (defn recently-added-submit
   "Handles the add-album form on the recently-added page.
@@ -53,8 +55,31 @@
                         {:new album
                          :error "Oh snap! We lost the album. Try it again?"})))
         ctx (merge {:form form-ctx}
-              {:albums (album/get-recently-added)})]
+                   {:albums (album/get-recently-added)})]
     (render-recently-added-html ctx)))
+
+
+(defn song-submit
+  "Handles the add-song form on the album page.
+   In the case of validation errors or other unexpected errors,
+   the :new key in the context will be set to the song
+   information submitted by the user."
+  [song]
+  (let [errors (v/validate-new-song song)
+        form-ctx (if (not-empty errors)
+                   {:validation-errors errors :new song}
+                   (try
+                     (album/add-song! song)
+                     {:new {} :success true}
+                     (catch Exception e
+                        (timbre/error e)
+                        {:new song
+                         :error "Oh snap! We lost the song. Try it again?"})))
+        ctx (merge {:form form-ctx}
+              {:album (:album_name song)
+               :songs (album/get-album-songs {:album_name (:album_name song)})})]
+    (render-album-page-html ctx))
+  )
 
 
 (defroutes album-routes
@@ -62,4 +87,6 @@
   (GET "/albums/:artist_name"     [artist_name]   (artist-page artist_name))
   (GET "/album/:album_name"       [album_name]    (album-page album_name))
   (POST "/albums/recently-added"  [& album-form]  (restricted (recently-added-submit album-form)))
+  (POST "/album/:album_name"      [& song-form]   (restricted (song-submit song-form)))
+  ;(POST "/album/:album_name"      [& song-form]   (str song-form))
 )

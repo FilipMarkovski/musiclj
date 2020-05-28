@@ -23,6 +23,16 @@
                                 "Album name must be less than 255
                                 characters long.")))))
 
+(def genre-name-validations
+  "Returns a validation set, ensuring a genre name is valid."
+  (validation-set
+    (length-of :genre :within (range 1 256)
+               :message-fn (fn [type m attributes & args]
+                             (if (= type :blank)
+                               "Genre name is required."
+                               "Genre name must be less than 255
+                               characters long.")))))
+
 (def release-date-format-message
   "The release date's format is incorrect. Must be yyyy-mm-dd.")
 
@@ -56,6 +66,28 @@
                                           #(v/not-nil? (parse-date (:release_date %)))
                                           :message release-date-invalid-message)))
 
+
+(def song-name-validations
+  "Returns a validation set, ensuring a song name is valid."
+  (validation-set
+    (length-of :name :within (range 1 256)
+               :message-fn (fn [type m attributes & args]
+                             (if (= type :blank)
+                               "Song name is required."
+                               "Song name must be less than 255
+                               characters long.")))))
+
+(def youtube-link-format-message
+  "The release date's format is incorrect. Must be yyyy-mm-dd.")
+
+(def youtube-link-validations
+  "Returns a validator function which ensures the format of the
+   youtube-string is correct."
+  (format-of :youtube_link
+             :format #"/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/"
+             :blank-message youtube-link-format-message
+             :message youtube-link-format-message))
+
 (def release-date-validations
   "Returns a validator which, when the format of the date-string
    is correct, ensures the date itself is valid."
@@ -67,4 +99,10 @@
    for a new album."
   (compose-sets artist-name-validations
                 album-name-validations
+                genre-name-validations
                 release-date-validations))
+
+(def validate-new-song
+  "Returns a validator that knows how to validate all the fields
+   for a new song."
+  (compose-sets song-name-validations))

@@ -2,45 +2,33 @@
 <p class="bg-danger">{{form.error}}</p>
 {% endif %}
 
-<form role="form" method="post" class="add-song">
+<form autocomplete="off" role="form" method="post" class="add-song">
 
     <div class="form-group">
-        <label for="artist_name">Artist</label>
+        <h4>Songs</h4>
+
+
+        <label for="name">Song name</label>
         <ul class="errors mb-0">
-            {% for e in form.validation-errors.artist_name %}
+            {% for e in form.validation-errors.name %}
             <li>{{e}}</li>
             {% endfor %}
         </ul>
 
-        <input type="input" name="artist_name"
-               class="form-control" id="artist_name"
-               value="{{form.new.artist_name}}">
-    </div>
+        <input type="input" name="name"
+               class="form-control" id="name"
+               value="{{form.new.name}}">
 
-    <div class="form-group">
-        <label for="album_name">Album</label>
+        <label for="youtube_link">YouTube link</label>
         <ul class="errors mb-0">
-            {% for e in form.validation-errors.album_name %}
+            {% for e in form.validation-errors.youtube_link %}
             <li>{{e}}</li>
             {% endfor %}
         </ul>
 
-        <input type="input" name="album_name"
-               class="form-control" id="album_name"
-               value="{{form.new.album_name}}">
-    </div>
-
-    <div class="form-group">
-        <label for="album_song">Song</label>
-<!--        <ul class="errors mb-0">-->
-<!--            {% for e in form.validation-errors.release_date %}-->
-<!--            <li>{{e}}</li>-->
-<!--            {% endfor %}-->
-<!--        </ul>-->
-
-        <input type="input" name="album_song"
-               class="form-control" id="album_song"
-               value="{{form.new.album_song}}">
+        <input type="input" name="youtube_link"
+               class="form-control" id="youtube_link"
+               value="{{form.new.youtube_link}}">
     </div>
 
     <div class="form-group submit">
