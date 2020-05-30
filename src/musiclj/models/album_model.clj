@@ -337,3 +337,13 @@
       )
     )
   )
+
+(defn delete-album
+  "Deletes album with the given name.
+  The album_id has to be manually cast to Integer,
+  because of some issues with the WHERE clause."
+  [album_id]
+    (k/delete albums
+              (k/where {:album_id (Integer/parseInt (:album_id album_id))}))
+  ;(println (type (Integer/parseInt (:album_id album_id))))
+  )

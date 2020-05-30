@@ -1,5 +1,6 @@
 (ns musiclj.routes.albums
   (:require [compojure.core :refer :all]
+            [ring.util.response :as response]
             [musiclj.layout :as layout]
             [musiclj.models.album_model :as album]
             [musiclj.validators.album_validator :as v]
@@ -7,6 +8,7 @@
             [noir.util.route :refer [restricted]]
             ))
 
+(def not-nil? (complement nil?))
 
 (defn render-recently-added-html
   "Simply renders the recently added page with the given context."
@@ -59,6 +61,19 @@
     (render-recently-added-html ctx)))
 
 
+(defn render-recently-added-on-delete-album
+  "Handles the delete-album fn on the recently-added page."
+  [album_id]
+  (if (not-nil? album_id)
+    (do (try
+          (album/delete-album {:album_id album_id})
+          (catch Exception e
+            (timbre/error e)))
+        (response/redirect "/albums/recently-added"))
+    (render-recently-added-html {:albums (album/get-recently-added)}))
+)
+
+
 (defn song-submit
   "Handles the add-song form on the album page.
    In the case of validation errors or other unexpected errors,
@@ -83,10 +98,10 @@
 
 
 (defroutes album-routes
-  (GET "/albums/recently-added"   []              (restricted (recently-added-page)))
-  (GET "/albums/:artist_name"     [artist_name]   (artist-page artist_name))
-  (GET "/album/:album_name"       [album_name]    (album-page album_name))
-  (POST "/albums/recently-added"  [& album-form]  (restricted (recently-added-submit album-form)))
-  (POST "/album/:album_name"      [& song-form]   (restricted (song-submit song-form)))
-  ;(POST "/album/:album_name"      [& song-form]   (str song-form))
+  (GET      "/albums/recently-added"    []              (restricted (recently-added-page)))
+  (GET      "/albums/:artist_name"      [artist_name]   (artist-page artist_name))
+  (GET      "/album/:album_name"        [album_name]    (album-page album_name))
+  (GET      "/album/:album_id/delete"   [album_id]      (restricted (render-recently-added-on-delete-album album_id)))
+  (POST     "/albums/recently-added"    [& album-form]  (restricted (recently-added-submit album-form)))
+  (POST     "/album/:album_name"        [& song-form]   (restricted (song-submit song-form)))
 )
