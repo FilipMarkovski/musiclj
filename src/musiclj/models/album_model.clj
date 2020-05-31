@@ -155,7 +155,7 @@
   ; album param is a map, {:album [value]}
   [album]
   (k/select songs
-          (k/fields [:songs.name :song_name] :songs.track_number :songs.youtube_link)
+          (k/fields :song_id [:songs.name :song_name] :songs.track_number :songs.youtube_link)
           ; for backwards compatibility we need to rename the :albums.name
           ; field to :album_name
           (k/with albums (k/fields [:albums.name :album_name]))
@@ -407,4 +407,13 @@
     (k/delete albums
               (k/where {:album_id (Integer/parseInt (:album_id album_id))}))
   ;(println (type (Integer/parseInt (:album_id album_id))))
+  )
+
+(defn delete-song
+  "Deletes song with the given name.
+  The song_id has to be manually cast to Integer,
+  because of some issues with the WHERE clause."
+  [song_id]
+    (k/delete songs
+              (k/where {:song_id (Integer/parseInt (:song_id song_id))}))
   )

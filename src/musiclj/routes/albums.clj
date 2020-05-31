@@ -111,6 +111,18 @@
     (render-recently-added-html {:albums (album/get-recently-added)}))
 )
 
+(defn render-album-page-on-delete-song
+  "Handles the delete-song fn on the album page."
+  [song-info]
+  (if (not-nil? (:song_id song-info))
+    (do (try
+          (album/delete-song {:song_id (:song_id song-info)})
+          (catch Exception e
+            (timbre/error e)))
+        (response/redirect (str "/album/" (:album_name song-info))))
+    (album-page (:album_name song-info)))
+)
+
 ;(defn artist-page
 ;  "Renders out the artist page."
 ;  [artist_name]
@@ -142,12 +154,13 @@
 
 
 (defroutes album-routes
-  (GET      "/albums/recently-added"    []              (restricted (recently-added-page)))
-  (GET      "/albums/:artist_id"        [artist_id]     (artist-page artist_id))
-  (GET      "/album/:album_name"        [album_name]    (album-page album_name))
-  (GET      "/album/:album_id/delete"   [album_id]      (restricted (render-recently-added-on-delete-album album_id)))
-  (GET      "/album/:album_id/edit"     [album_id]      (restricted (edit-album-page album_id)))
-  (POST     "/album/:album_id/edit"     [& album-form]  (restricted (update-album-submit album-form)))
-  (POST     "/albums/recently-added"    [& album-form]  (restricted (recently-added-submit album-form)))
-  (POST     "/album/:album_name"        [& song-form]   (restricted (song-submit song-form)))
+  (GET      "/albums/recently-added"                     []              (restricted (recently-added-page)))
+  (GET      "/albums/:artist_id"                         [artist_id]     (artist-page artist_id))
+  (GET      "/album/:album_name"                         [album_name]    (album-page album_name))
+  (GET      "/album/:album_id/delete"                    [album_id]      (restricted (render-recently-added-on-delete-album album_id)))
+  (GET      "/album/:album_id/edit"                      [album_id]      (restricted (edit-album-page album_id)))
+  (POST     "/album/:album_id/edit"                      [& album-form]  (restricted (update-album-submit album-form)))
+  (GET      "/album/:album_name/songs/:song_id/delete"   [& song-info]   (restricted (render-album-page-on-delete-song song-info)))
+  (POST     "/albums/recently-added"                     [& album-form]  (restricted (recently-added-submit album-form)))
+  (POST     "/album/:album_name"                         [& song-form]   (restricted (song-submit song-form)))
 )
