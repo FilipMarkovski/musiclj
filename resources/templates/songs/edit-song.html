@@ -1,5 +1,6 @@
 {% extends "templates/base.html" %}
 {% block content %}
+
 <h1>{{album}}</h1>
 
 <div class="row">
@@ -18,7 +19,7 @@
                 </a>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmationModal"
-                                                             data-id="{{s.song_id}}" data-name="{{album}}">
+                        data-id="{{s.song_id}}" data-name="{{album}}">
                     <i class="fas fa-trash"></i> Delete
                 </button>
             </div>
@@ -28,7 +29,7 @@
 
     <div class="col-sm-6 offset-md-2 col-md-4">
         {% with form=form %}
-        {% include "templates/songs/add-song.html" %}
+        {% include "templates/songs/edit-song-form.html" %}
         {% endwith %}
     </div>
 

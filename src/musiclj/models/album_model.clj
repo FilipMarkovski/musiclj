@@ -155,13 +155,24 @@
   ; album param is a map, {:album [value]}
   [album]
   (k/select songs
-          (k/fields :song_id [:songs.name :song_name] :songs.track_number :songs.youtube_link)
+          (k/fields :song_id :album_id [:songs.name :song_name]
+                    :songs.track_number :songs.youtube_link)
           ; for backwards compatibility we need to rename the :albums.name
           ; field to :album_name
           (k/with albums (k/fields [:albums.name :album_name]))
           (k/where {:albums.name (:album_name album)})
           (k/order :track_number :ASC))
 )
+
+(defn get-song-by-id
+  "Gets a song for the given id"
+  [song]
+  (first
+    (k/select songs
+              (k/fields :song_id [:name :song_name] :track_number :youtube_link :album_id)
+              (k/where {:song_id (Integer/parseInt (:song_id song))}))
+    )
+  )
 
 (defn get-album-songs-with-fields
   "Fetches the specific song from the database for a particular album."
@@ -213,6 +224,18 @@
               (k/where {:album_id (:album_id album)}))))
 
 
+(defn update-song<!
+  "Updates the song for the given album to the database."
+  [song]
+  (let [song (->
+                (clojure.set/rename-keys song {:song_name :name})
+                (dissoc :album_name)
+                (assoc :song_id (Integer/parseInt (:song_id song))
+                       :track_number (Integer/parseInt (:track_number song))))]
+    (k/update songs
+              (k/set-fields song)
+              (k/where {:song_id (:song_id song)}))))
+
 ;-- name: insert-song<!
 ;-- Adds the song for the given album to the database
 ;
@@ -230,7 +253,9 @@
   [song]
   (let [song (->
                (clojure.set/rename-keys song {:song_name :name})
-               (dissoc :album_name))]
+               (dissoc :album_name)
+               ;(assoc :track_number (Integer/parseInt (:track_number song)))
+               )]
     (k/insert songs (k/values song)))
   )
 
@@ -284,14 +309,6 @@
                         [:artists.name :artist_name] :albums.release_date :albums.genre)
               (k/where {:album_id (Integer/parseInt (:album_id album))}))))
 
-;(k/select albums
-;          (k/join artists)
-;          ; for backwards compatibility we need to rename the :albums.name
-;          ; field to :album_name
-;          (k/fields :albums.album_id [:albums.name :album_name] :albums.release_date)
-;          (k/where {:artists.name (:artist artist)})
-;          (k/order :release_date :DESC)))
-
 (defn get-last-track-number
   "Gets the last track number of an album"
   [album]
@@ -338,21 +355,6 @@
             (k/where {:name (:artist_name artist_name)}))))
 
 
-;(defn add-album!
-;  "Adds a new album to the database."
-;  ([album]
-;       (jdbc/with-db-transaction [tx db-spec]
-;            (add-album! album tx)))
-;  ([album tx]
-;       (let [artist-info {:artist_name (:artist_name album)}
-;             txn {:connection tx}
-;             ; fetch or insert the artist record
-;             artist (or (first (get-artists-by-name artist-info txn))
-;                        (insert-artist<! artist-info txn))
-;             album-info (assoc album :artist_id (:artist_id artist))]
-;         (or (first (get-albums-by-name album-info txn))
-;             (insert-album<! album-info txn)))))
-
 (defn add-album!
   "Adds a new album to the database."
   [album]
@@ -383,14 +385,33 @@
   )
 )
 
+
+(defn add-new-info-for-song!
+  "Updates a song to the database."
+  [song]
+  (db/transaction
+    (let [album-info {:album_name (:album_name song)}
+          ; fetch or insert the album record
+          album (get-albums-by-name album-info)
+          song-info (assoc song :album_id (:album_id album))]
+      (update-song<! song-info)
+      ;(println song-info)
+      )
+    )
+  )
+
 (defn add-song!
   "Adds a new song to the database."
   [song]
   (db/transaction
     (let [album-info {:album_name (:album_name song)}
-          ; fetch or insert the artist record
+          ; fetch the album record
           album (get-albums-by-name album-info)
-          track-number (inc-last-track-number album)
+
+          track-number (if (empty? (:track_number song))
+            (inc-last-track-number album)
+            (Integer/parseInt (:track_number song)))
+
           song-info (assoc song :album_id (:album_id album)
                                 :track_number track-number)]
       (or (get-album-songs-with-fields song-info)
