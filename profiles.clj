@@ -2,5 +2,5 @@
              :db-classname    "org.postgresql.Driver"
              :db-subprotocol  "postgresql"
              :db-subname      "//localhost/postgres"
-             :db-user         "hipstr"
+             :db-user         "musiclj"
              :db-password     "p455w0rd"}}}

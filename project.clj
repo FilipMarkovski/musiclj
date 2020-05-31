@@ -39,7 +39,7 @@
                   :classname "org.postgresql.Driver"
                   :subprotocol "postgresql"
                   :subname "//localhost/postgres"
-                  :user "hipstr"
+                  :user "musiclj"
                   :password "p455w0rd"
                   }
    }
