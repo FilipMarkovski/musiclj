@@ -41,41 +41,6 @@
    (k/pk :song_id)
    ; We can define the foreign key relationship of the songs back
    ; to the albums table
-   (k/belongs-to albums {:fk :album_id})
-   ; define the relationship between songs and genres
-   (k/has-many genre))
-
-
-; define the genre entity
-(k/defentity genre
-   ; again, we have to map the primary key to our korma definition.
-   (k/pk :genre_id)
-   ; define the relationship between songs and genres, and albums and genres
-   (k/has-many songs)
-   (k/has-many albums))
-
-
-; define the genre_by_track entity
-(k/defentity genre_by_track
-   ; again, we have to map the primary key to our korma definition.
-   ; this time it's a composite primary key
-   (k/pk :genre_id)
-   (k/pk :song_id)
-   ; We can define the foreign key relationship of the
-   ; genre_by_track table with genres and songs
-   (k/belongs-to genre {:fk :genre_id})
-   (k/belongs-to songs {:fk :song_id}))
-
-
-; define the genre_by_album entity
-(k/defentity genre_by_album
-   ; again, we have to map the composite primary key
-   ; to our korma definition.
-   (k/pk :genre_id)
-   (k/pk :album_id)
-   ; We can define the foreign key relationship of the
-   ; genre_by_album table with genres and albums
-   (k/belongs-to genre {:fk :genre_id})
    (k/belongs-to albums {:fk :album_id}))
 
 
@@ -143,49 +108,6 @@
           (k/order :release_date :DESC)))
 
 
-; SELECT s.name, s.track_number, s.youtube_link
-; FROM songs s
-; INNER JOIN albums AS alb
-;       ON alb.album_id = s.album_id
-; WHERE alb.name = :album_name;
-;
-(defn get-album-songs
-  "Gets the album track list."
-  ; for backwards compatibility it is expected that the
-  ; album param is a map, {:album [value]}
-  [album]
-  (k/select songs
-          (k/fields :song_id :album_id [:songs.name :song_name]
-                    :songs.track_number :songs.youtube_link)
-          ; for backwards compatibility we need to rename the :albums.name
-          ; field to :album_name
-          (k/with albums (k/fields [:albums.name :album_name]))
-          (k/where {:albums.name (:album_name album)})
-          (k/order :track_number :ASC))
-)
-
-(defn get-song-by-id
-  "Gets a song for the given id"
-  [song]
-  (first
-    (k/select songs
-              (k/fields :song_id [:name :song_name] :track_number :youtube_link :album_id)
-              (k/where {:song_id (Integer/parseInt (:song_id song))}))
-    )
-  )
-
-(defn get-album-songs-with-fields
-  "Fetches the specific song from the database for a particular album."
-  ; for backwards compatibility it is expected that the
-  ; album param is {:artist_id :artist_name}
-  [song]
-  (first
-    (k/select songs
-              (k/where {:album_id (:album_id song)
-                        :name (:name song)}))))
-
-
-
 ;-- name: insert-album<!
 ;-- Adds the album for the given artist to the database
 ; INSERT INTO albums (artist_id, name, release_date)
@@ -222,42 +144,6 @@
     (k/update albums
               (k/set-fields album)
               (k/where {:album_id (:album_id album)}))))
-
-
-(defn update-song<!
-  "Updates the song for the given album to the database."
-  [song]
-  (let [song (->
-                (clojure.set/rename-keys song {:song_name :name})
-                (dissoc :album_name)
-                (assoc :song_id (Integer/parseInt (:song_id song))
-                       :track_number (Integer/parseInt (:track_number song))))]
-    (k/update songs
-              (k/set-fields song)
-              (k/where {:song_id (:song_id song)}))))
-
-;-- name: insert-song<!
-;-- Adds the song for the given album to the database
-;
-; INSERT INTO songs (album_id, name, track_number, youtube_link)
-; VALUES (:album_id, :name, :track_number, :youtube_link)
-(defn insert-song<!
-  "Adds the song for the given album to the database."
-  ; for backwards compatibility it is expected that the
-  ; song param is a map,
-  ; {:album_id :youtube_link :track_number :song_name :album_name}
-  ; As such we'll have to rename the :song_name key and remove
-  ; the :album_name. This is because korma will attempt to use all
-  ; keys in the map when inserting, and :album_name will destroy
-  ; us with rabid vitriol.
-  [song]
-  (let [song (->
-               (clojure.set/rename-keys song {:song_name :name})
-               (dissoc :album_name)
-               ;(assoc :track_number (Integer/parseInt (:track_number song)))
-               )]
-    (k/insert songs (k/values song)))
-  )
 
 
 ; -- name: get-albums-by-name
@@ -309,24 +195,6 @@
                         [:artists.name :artist_name] :albums.release_date :albums.genre)
               (k/where {:album_id (Integer/parseInt (:album_id album))}))))
 
-(defn get-last-track-number
-  "Gets the last track number of an album"
-  [album]
-  (first
-    (k/select songs
-              (k/fields :songs.track_number)
-              (k/with albums (k/fields [:albums.name :album_name]))
-              (k/where {:albums.name (:name album)})
-              (k/order :track_number :DESC)))
-  )
-
-(defn inc-last-track-number
-  "Adds 1 to the track number"
-  [album]
-  (if (nil? (get-last-track-number album))
-    1
-    (inc (:track_number (get-last-track-number album))))
-  )
 
 ; -- name: insert-artist<!
 ; -- Inserts a new artist into the database. ; INSERT INTO artists(name)
@@ -385,6 +253,114 @@
   )
 )
 
+(defn delete-album
+  "Deletes album with the given name.
+  The album_id has to be manually cast to Integer,
+  because of some issues with the WHERE clause."
+  [album_id]
+  (k/delete albums
+            (k/where {:album_id (Integer/parseInt (:album_id album_id))}))
+  ;(println (type (Integer/parseInt (:album_id album_id))))
+  )
+
+
+; SELECT s.name, s.track_number, s.youtube_link
+; FROM songs s
+; INNER JOIN albums AS alb
+;       ON alb.album_id = s.album_id
+; WHERE alb.name = :album_name;
+;
+(defn get-album-songs
+  "Gets the album track list."
+  ; for backwards compatibility it is expected that the
+  ; album param is a map, {:album [value]}
+  [album]
+  (k/select songs
+            (k/fields :song_id :album_id [:songs.name :song_name]
+                      :songs.track_number :songs.youtube_link)
+            ; for backwards compatibility we need to rename the :albums.name
+            ; field to :album_name
+            (k/with albums (k/fields [:albums.name :album_name]))
+            (k/where {:albums.name (:album_name album)})
+            (k/order :track_number :ASC))
+  )
+
+(defn get-song-by-id
+  "Gets a song for the given id"
+  [song]
+  (first
+    (k/select songs
+              (k/fields :song_id [:name :song_name] :track_number :youtube_link :album_id)
+              (k/where {:song_id (Integer/parseInt (:song_id song))}))
+    )
+  )
+
+(defn get-album-songs-with-fields
+  "Fetches the specific song from the database for a particular album."
+  ; for backwards compatibility it is expected that the
+  ; album param is {:artist_id :artist_name}
+  [song]
+  (first
+    (k/select songs
+              (k/where {:album_id (:album_id song)
+                        :name (:name song)}))))
+
+
+
+(defn update-song<!
+  "Updates the song for the given album to the database."
+  [song]
+  (let [song (->
+               (clojure.set/rename-keys song {:song_name :name})
+               (dissoc :album_name)
+               (assoc :song_id (Integer/parseInt (:song_id song))
+                      :track_number (Integer/parseInt (:track_number song))))]
+    (k/update songs
+              (k/set-fields song)
+              (k/where {:song_id (:song_id song)}))))
+
+;-- name: insert-song<!
+;-- Adds the song for the given album to the database
+;
+; INSERT INTO songs (album_id, name, track_number, youtube_link)
+; VALUES (:album_id, :name, :track_number, :youtube_link)
+(defn insert-song<!
+  "Adds the song for the given album to the database."
+  ; for backwards compatibility it is expected that the
+  ; song param is a map,
+  ; {:album_id :youtube_link :track_number :song_name :album_name}
+  ; As such we'll have to rename the :song_name key and remove
+  ; the :album_name. This is because korma will attempt to use all
+  ; keys in the map when inserting, and :album_name will destroy
+  ; us with rabid vitriol.
+  [song]
+  (let [song (->
+               (clojure.set/rename-keys song {:song_name :name})
+               (dissoc :album_name)
+               ;(assoc :track_number (Integer/parseInt (:track_number song)))
+               )]
+    (k/insert songs (k/values song)))
+  )
+
+
+(defn get-last-track-number
+  "Gets the last track number of an album"
+  [album]
+  (first
+    (k/select songs
+              (k/fields :songs.track_number)
+              (k/with albums (k/fields [:albums.name :album_name]))
+              (k/where {:albums.name (:name album)})
+              (k/order :track_number :DESC)))
+  )
+
+(defn inc-last-track-number
+  "Adds 1 to the track number"
+  [album]
+  (if (nil? (get-last-track-number album))
+    1
+    (inc (:track_number (get-last-track-number album))))
+  )
 
 (defn add-new-info-for-song!
   "Updates a song to the database."
@@ -418,16 +394,6 @@
           (insert-song<! song-info))
       )
     )
-  )
-
-(defn delete-album
-  "Deletes album with the given name.
-  The album_id has to be manually cast to Integer,
-  because of some issues with the WHERE clause."
-  [album_id]
-    (k/delete albums
-              (k/where {:album_id (Integer/parseInt (:album_id album_id))}))
-  ;(println (type (Integer/parseInt (:album_id album_id))))
   )
 
 (defn delete-song
