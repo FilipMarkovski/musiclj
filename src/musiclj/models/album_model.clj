@@ -93,7 +93,7 @@
   (k/select albums
           (k/fields :album_id
                   [:name :album_name] :release_date :created_at)
-          (k/with artists (k/fields [:name :artist]))
+          (k/with artists (k/fields [:name :artist] :artist_id))
           (k/order :created_at :DESC)
           (k/limit 10))
   )
@@ -103,6 +103,16 @@
   []
   (k/select artists
     (k/fields :name)))
+
+(defn get-artist-by-id
+  "Gets artist of id"
+  [artist]
+  (first
+    (k/select artists
+              (k/fields :name)
+              (k/where {:artist_id (Integer/parseInt artist)})
+              ))
+  )
 
 
 (defn get-albums
@@ -187,6 +197,22 @@
     (k/insert albums (k/values album))))
 
 
+(defn update-album<!
+  "Updates the album for the given artist to the database."
+  [album]
+  (let [album (->
+                (clojure.set/rename-keys album {:album_name :name})
+                (dissoc :artist_name)
+                (assoc :release_date
+                       (k/sqlfn date (:release_date album))
+                       :album_id (Integer/parseInt (:album_id album))
+                       )
+                )]
+    (k/update albums
+              (k/set-fields album)
+              (k/where {:album_id (:album_id album)}))))
+
+
 ;-- name: insert-song<!
 ;-- Adds the song for the given album to the database
 ;
@@ -245,6 +271,26 @@
   (first
     (k/select albums
               (k/where {:name (:album_name album)}))))
+
+(defn get-album-by-id
+  "Fetches the specific album from the database with the given id."
+  ; for backwards compatibility it is expected that the
+  ; album param is {:artist_name}
+  [album]
+  (first
+    (k/select albums
+              (k/join artists)
+              (k/fields :albums.album_id [:albums.name :album_name] :artists.artist_id
+                        [:artists.name :artist_name] :albums.release_date :albums.genre)
+              (k/where {:album_id (Integer/parseInt (:album_id album))}))))
+
+;(k/select albums
+;          (k/join artists)
+;          ; for backwards compatibility we need to rename the :albums.name
+;          ; field to :album_name
+;          (k/fields :albums.album_id [:albums.name :album_name] :albums.release_date)
+;          (k/where {:artists.name (:artist artist)})
+;          (k/order :release_date :DESC)))
 
 (defn get-last-track-number
   "Gets the last track number of an album"
@@ -318,6 +364,21 @@
           album-info (assoc album :artist_id (:artist_id artist))]
       (or (get-albums-by-name-and-id album-info)
           (insert-album<! album-info))
+    )
+  )
+)
+
+(defn add-new-info-for-album!
+  "Updates an album to the database."
+  [album]
+  (db/transaction
+    (let [artist-info {:artist_name (:artist_name album)}
+          ; fetch or insert the artist record
+          artist (or (get-artists-by-name artist-info)
+                     (insert-artist<! artist-info))
+          album-info (assoc album :artist_id (:artist_id artist))]
+      (update-album<! album-info)
+      ;(println album-info)
     )
   )
 )

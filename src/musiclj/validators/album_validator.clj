@@ -105,4 +105,5 @@
 (def validate-new-song
   "Returns a validator that knows how to validate all the fields
    for a new song."
-  (compose-sets song-name-validations))
+  (compose-sets song-name-validations
+                ))

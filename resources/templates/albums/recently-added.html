@@ -7,16 +7,16 @@
         <ol class="albums">
             {% for a in albums %}
             <li>
-                <div class="artist"><a href="/albums/{{a.artist}}">{{a.artist}}</a></div>
+                <div class="artist"><a href="/albums/{{a.artist_id}}">{{a.artist}}</a></div>
                 <div class="album-name"><a href="/album/{{a.album_name}}">{{a.album_name}}</a></div>
                 <div class="release-date">{{a.release_date|date:"dd MMMM, yyyy"}}</div>
             </li>
             <div class="controls">
-                <button type="button" class="btn btn-primary">
+                <a href="/album/{{a.album_id}}/edit" class="btn btn-primary">
                     <i class="fas fa-pen"></i> Edit
-                </button>
+                </a>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmationModal" data-id="{{a.album_id}}">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmationModal" data-id="{{a.album_id}}">
                     <i class="fas fa-trash"></i> Delete
                 </button>
             </div>

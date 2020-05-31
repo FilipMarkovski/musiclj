@@ -1,0 +1,26 @@
+{% extends "templates/base.html" %}
+{% block content %}
+
+<h1>{{album.album_name}}</h1>
+
+<div class="row">
+
+    <div class="col-sm-6 col-md-4">
+        <ol class="single-album">
+            <li>
+                <div class="artist"><a href="/albums/{{album.artist_id}}">{{album.artist_name}}</a></div>
+                <div class="album-name"><a href="/album/{{album.album_name}}">{{album.album_name}}</a></div>
+                <div class="release-date">{{album.release_date|date:"dd MMMM, yyyy"}}</div>
+            </li>
+        </ol>
+    </div>
+
+    <div class="col-sm-6 offset-md-2 col-md-4">
+        {% with form=form %}
+        {% include "templates/albums/edit-album-form.html" %}
+        {% endwith %}
+    </div>
+
+</div>
+
+{% endblock %}
