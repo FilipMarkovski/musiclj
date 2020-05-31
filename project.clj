@@ -15,7 +15,7 @@
                  [prone "0.6.0"]
                  [com.novemberain/validateur "2.3.1"]
                  [org.postgresql/postgresql "42.2.6"]
-                 [migratus "0.7.0"]
+                 [migratus "0.8.7"]
                  [yesql "0.5.0-rc1"]
                  [crypto-password "0.1.3"]
                  [korma "0.4.0"]
@@ -26,7 +26,7 @@
   :plugins [[lein-ring "0.8.13"]
             [lein-environ "1.0.0"]
             [lein-ancient "0.5.5"]
-            [migratus-lein "0.1.0"]
+            [migratus-lein "0.7.3"]
             [quickie "0.3.6"]
             ]
   :ring {:handler musiclj.handler/app
@@ -35,7 +35,6 @@
   :migratus {
              :store :database
              :migration-dir "migrations"
-             :migration-table-name "_migrations"
              :db {
                   :classname "org.postgresql.Driver"
                   :subprotocol "postgresql"
