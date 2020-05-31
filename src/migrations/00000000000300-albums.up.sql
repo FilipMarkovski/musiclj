@@ -55,27 +55,7 @@ INSERT INTO albums (artist_id, name, genre, release_date)
     WHERE a.name = 'AC/DC'
 --;;
 INSERT INTO albums (artist_id, name, genre, release_date)
-    SELECT a.artist_id, 'Back in Black', 'Hard rock, heavy metal', '1980-07-25'
-    FROM artists a
-    WHERE a.name = 'AC/DC'
---;;
-INSERT INTO albums (artist_id, name, genre, release_date)
-    SELECT a.artist_id, 'Highway to Hell', 'Hard rock, blues rock, rock and roll', '1979-07-27'
-    FROM artists a
-    WHERE a.name = 'AC/DC'
---;;
-INSERT INTO albums (artist_id, name, genre, release_date)
     SELECT a.artist_id, 'A Night at the Opera', 'Progressive rock, pop, heavy metal, hard rock', '1975-11-21'
-    FROM artists a
-    WHERE a.name = 'Queen'
---;;
-INSERT INTO albums (artist_id, name, genre, release_date)
-    SELECT a.artist_id, 'Queen II', 'Art rock, hard rock, glam rock, heavy metal, progressive rock', '1974-03-08'
-    FROM artists a
-    WHERE a.name = 'Queen'
---;;
-INSERT INTO albums (artist_id, name, genre, release_date)
-    SELECT a.artist_id, 'Hot Space', 'Rock, disco, dance, funk, rhythm and blues, pop', '1982-05-21'
     FROM artists a
     WHERE a.name = 'Queen'
 --;;

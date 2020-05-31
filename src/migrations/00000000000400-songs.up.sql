@@ -1,6 +1,6 @@
 CREATE TABLE songs
 (song_id       SERIAL        NOT NULL PRIMARY KEY,
- album_id      BIGINT        NOT NULL REFERENCES albums (album_id),
+ album_id      BIGINT        NOT NULL REFERENCES albums (album_id) ON DELETE CASCADE,
  name          VARCHAR(255)  NOT NULL,
  track_number  INTEGER       NOT NULL,
  youtube_link  VARCHAR(255)  NOT NULL,

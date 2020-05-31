@@ -58,7 +58,7 @@
     (GET "/about" [] (about-page))
     (GET "/signup" [] (signup-page))
     (POST "/signup" [& form] (signup-page-submit form))
-    (GET "/signup-success" [] "Success!")
+    (GET "/signup-success" [] (response/redirect "/login"))
     (GET "/login" [] (login-page))
     (POST "/login" [& login-form] (login-page login-form))
     (ANY "/logout" [] (logout))

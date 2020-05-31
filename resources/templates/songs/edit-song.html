@@ -1,39 +1,57 @@
 {% extends "templates/base.html" %}
+{% block pagetitle %} Edit {{song.song_name}} {% endblock %}
+
 {% block content %}
 
-<h1>{{album}}</h1>
+<section class="dashboard-bg nav-padding">
+    <div class="container text-white">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10">
+                <div class="jumbotron">
 
-<div class="row">
+                    <h1 class="text-center">{{album}}</h1>
 
-    <div class="col-sm-6 col-md-4">
-        <ol class="album-tracks">
-            {% for s in songs %}
-            <li>
-                <div class="song-name">{{s.song_name}}</div>
-                <div class="track-number">Track number: {{s.track_number}}</div>
-                <div class="youtube-link"><a href="{{s.youtube_link}}" target="_blank">Watch on Youtube</a></div>
-            </li>
-            <div class="controls">
-                <a href="/album/{{album}}/songs/{{s.song_id}}/edit" class="btn btn-primary">
-                    <i class="fas fa-pen"></i> Edit
-                </a>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmationModal"
-                        data-id="{{s.song_id}}" data-name="{{album}}">
-                    <i class="fas fa-trash"></i> Delete
-                </button>
+                    <div class="row justify-content-center">
+
+                        <div class="col-sm-6">
+                            <ol class="album-tracks">
+                                {% for s in songs %}
+                                <li>
+                                    <div class="song-name">{{s.song_name}}</div>
+                                    <div class="track-number">Track number: {{s.track_number}}</div>
+                                    <div class="youtube-link">
+                                        <a href="{{s.youtube_link}}" class="text-primary link-underline font-weight-bold" target="_blank">
+                                            <i class="fab fa-youtube"></i> Watch on Youtube
+                                        </a>
+                                    </div>
+                                </li>
+                                <div class="controls">
+                                    <a href="/album/{{album}}/songs/{{s.song_id}}/edit" class="btn btn-primary">
+                                        <i class="fas fa-pen"></i> Edit
+                                    </a>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmationModal"
+                                            data-id="{{s.song_id}}" data-name="{{album}}">
+                                        <i class="fas fa-trash"></i> Delete
+                                    </button>
+                                </div>
+                                {% endfor %}
+                            </ol>
+                        </div>
+
+                        <div class="col-sm-6">
+                            {% with form=form %}
+                            {% include "templates/songs/edit-song-form.html" %}
+                            {% endwith %}
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
-            {% endfor %}
-        </ol>
+        </div>
     </div>
-
-    <div class="col-sm-6 offset-md-2 col-md-4">
-        {% with form=form %}
-        {% include "templates/songs/edit-song-form.html" %}
-        {% endwith %}
-    </div>
-
-</div>
+</section>
 
 
 <!-- Modal -->

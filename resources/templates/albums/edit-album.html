@@ -1,26 +1,42 @@
 {% extends "templates/base.html" %}
+{% block pagetitle %} Edit Album {% endblock %}
+
 {% block content %}
 
-<h1>{{album.album_name}}</h1>
+<div class="dashboard-bg nav-padding">
+    <div class="container text-white">
 
-<div class="row">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10">
+                <div class="jumbotron">
 
-    <div class="col-sm-6 col-md-4">
-        <ol class="single-album">
-            <li>
-                <div class="artist"><a href="/albums/{{album.artist_id}}">{{album.artist_name}}</a></div>
-                <div class="album-name"><a href="/album/{{album.album_name}}">{{album.album_name}}</a></div>
-                <div class="release-date">{{album.release_date|date:"dd MMMM, yyyy"}}</div>
-            </li>
-        </ol>
+                    <h1 class="text-center">{{album.album_name}}</h1>
+
+                    <div class="row justify-content-center">
+
+                        <div class="col-sm-6">
+                            <ol class="single-album">
+                                <li>
+                                    <div class="artist"><a href="/albums/{{album.artist_id}}" class="link-underline font-weight-bold text-primary">{{album.artist_name}}</a></div>
+                                    <div class="album-name"><a href="/album/{{album.album_name}}" class="link-underline font-weight-bold text-secondary">{{album.album_name}}</a></div>
+                                    <div class="release-date">{{album.release_date|date:"dd MMMM, yyyy"}}</div>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="col-sm-6">
+                            {% with form=form %}
+                            {% include "templates/albums/edit-album-form.html" %}
+                            {% endwith %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </div>
-
-    <div class="col-sm-6 offset-md-2 col-md-4">
-        {% with form=form %}
-        {% include "templates/albums/edit-album-form.html" %}
-        {% endwith %}
-    </div>
-
 </div>
 
 {% endblock %}

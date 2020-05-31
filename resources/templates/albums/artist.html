@@ -1,19 +1,76 @@
 {% extends "templates/base.html" %}
+{% block pagetitle %} {{artist}} {% endblock %}
+
 {% block content %}
-<h1>{{artist}}</h1>
 
-<div class="row">
-    <div class="col-sm-6 col-md-4">
+<section class="dashboard-bg nav-padding">
+    <div class="container text-white">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10">
+                <div class="jumbotron">
 
-        <ol class="albums">
-            {% for a in albums %}
-            <li>
-                <div class="album-name"><a href="/album/{{a.album_name}}">{{a.album_name}}</a></div>
-                <div class="release-date">Released {{a.release_date}}</div>
-            </li>
-            {% endfor %}
-        </ol>
+                    <h1 class="text-center">{{artist}}</h1>
 
+                    <div class="row">
+                        <div class="col-sm-6">
+
+                            <ol class="albums">
+                                {% for a in albums %}
+                                <li>
+                                    <div class="album-name"><a href="/album/{{a.album_name}}" class="link-underline font-weight-bold text-primary">{{a.album_name}}</a></div>
+                                    <div class="release-date">Released {{a.release_date}}</div>
+                                </li>
+                                <div class="controls mb-4">
+                                    <a href="/album/{{a.album_id}}/edit" class="btn btn-primary">
+                                        <i class="fas fa-pen"></i> Edit
+                                    </a>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmationModal" data-id="{{a.album_id}}">
+                                        <i class="fas fa-trash"></i> Delete
+                                    </button>
+                                </div>
+                                {% endfor %}
+                            </ol>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmationModalLabel">Are you sure?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this album?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-danger">Delete</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
+
+<script>
+    $('#confirmationModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var id = button.data('id');
+
+        $('.modal-footer .btn-danger').attr("href", "/album" + "/" + id + "/delete");
+    })
+</script>
+
 {% endblock %}
