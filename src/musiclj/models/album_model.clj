@@ -60,7 +60,7 @@
                   [:name :album_name] :release_date :created_at)
           (k/with artists (k/fields [:name :artist] :artist_id))
           (k/order :created_at :DESC)
-          (k/limit 10))
+          (k/limit 5))
   )
 
 (defn get-artists
