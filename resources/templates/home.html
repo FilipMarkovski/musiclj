@@ -1,18 +1,37 @@
 {% extends "templates/base.html" %}
-{% block content %}
-<div class="row">
-  <div class="col-12">
+{% block pagetitle %} Welcome {% endblock %}
 
-    <div class="jumbotron">
-      <h1>Welcome to musiclj</h1>
-      <p>Obscurely building your vinyl cred since, like, now.</p>
-      <p>
-        <a class="btn btn-success btn-lg" href="{{servlet-context}}/signup">Sign Up</a>
-        or
-        <a class="btn btn-primary btn-lg" href="{{servlet-context}}/login">Login</a>
-      </p>
+{% block content %}
+<section class="welcome-page">
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+
+        <div class="jumbotron text-white text-center">
+          <h1>Welcome to</h1>
+
+          <figure class="mb-0">
+            <img src="/images/musiclj-logo-green.svg" alt="Musi.clj logo" style="max-width: 200px">
+          </figure>
+
+          <p>This is a simple class project.
+          {% if is-authed? %}
+            <br><span>Please, head onto the <a href="{{servlet-context}}/albums/recently-added" class="font-weight-bold link-underline text-white">albums</a> page.</span></p>
+          {% else %}
+            <span> To proceed, you have to make an account.</span></p>
+            <p>
+              <a class="btn btn-primary btn-lg" href="{{servlet-context}}/signup">Sign Up</a>
+              or
+              <a class="btn btn-secondary btn-lg" href="{{servlet-context}}/login">Login</a>
+            </p>
+          {% endif %}
+
+        </div>
+
+      </div>
     </div>
 
   </div>
-</div>
+</section>
 {% endblock %}

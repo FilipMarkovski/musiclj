@@ -1,36 +1,45 @@
 {% extends "templates/base.html" %}
+{% block pagetitle %} Recently added {% endblock %}
+
 {% block content %}
-<h1>Recently Added</h1>
-<div class="row">
 
-    <div class="col-sm-6 col-md-4">
-        <ol class="albums">
-            {% for a in albums %}
-            <li>
-                <div class="artist"><a href="/albums/{{a.artist_id}}">{{a.artist}}</a></div>
-                <div class="album-name"><a href="/album/{{a.album_name}}">{{a.album_name}}</a></div>
-                <div class="release-date">{{a.release_date|date:"dd MMMM, yyyy"}}</div>
-            </li>
-            <div class="controls">
-                <a href="/album/{{a.album_id}}/edit" class="btn btn-primary">
-                    <i class="fas fa-pen"></i> Edit
-                </a>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmationModal" data-id="{{a.album_id}}">
-                    <i class="fas fa-trash"></i> Delete
-                </button>
+<section class="dashboard-bg nav-padding">
+    <div class="container text-white">
+
+        <h1 class="text-center">Recently Added</h1>
+        <div class="row">
+
+            <div class="col-sm-6 col-md-4">
+                <ol class="albums">
+                    {% for a in albums %}
+                    <li>
+                        <div class="artist"><a href="/albums/{{a.artist_id}}" class="link-underline font-weight-bold">{{a.artist}}</a></div>
+                        <div class="album-name"><a href="/album/{{a.album_name}}">{{a.album_name}}</a></div>
+                        <div class="release-date">{{a.release_date|date:"dd MMMM, yyyy"}}</div>
+                    </li>
+                    <div class="controls">
+                        <a href="/album/{{a.album_id}}/edit" class="btn btn-primary">
+                            <i class="fas fa-pen"></i> Edit
+                        </a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmationModal" data-id="{{a.album_id}}">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </div>
+                    {% endfor %}
+                </ol>
             </div>
-            {% endfor %}
-        </ol>
-    </div>
 
-    <div class="col-sm-6 offset-md-2 col-md-4">
-        {% with form=form %}
-        {% include "templates/albums/add-album-form.html" %}
-        {% endwith %}
-    </div>
+            <div class="col-sm-6 offset-md-2 col-md-4">
+                {% with form=form %}
+                {% include "templates/albums/add-album-form.html" %}
+                {% endwith %}
+            </div>
 
-</div>
+        </div>
+
+    </div>
+</section>
 
 <!-- Modal -->
 <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
